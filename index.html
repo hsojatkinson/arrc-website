@@ -117,13 +117,18 @@ section{padding-block:120px}
 .difference .copy{display:grid;gap:20px;color:var(--on-navy-soft)}
 .difference .copy p:first-child{color:#fff;font-size:21px;line-height:1.5}
 
-.leader{padding-block:56px}
-.leader .wrap{display:grid;grid-template-columns:auto auto 1fr auto;gap:40px;align-items:center}
-.portrait{width:112px;aspect-ratio:1;background:var(--navy);display:grid;place-items:center}
-.portrait img{width:58%;height:auto}
-.leader h2{font-size:30px;color:var(--head);margin-top:14px}
-.leader .role{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-soft);margin-top:8px}
-.leader .summary{color:var(--fg-soft);max-width:52ch;min-width:0}
+.leader{padding-block:112px 120px}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 32px}
+.person{min-width:0}
+.person .photo{aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--navy)}
+.person .photo>img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s}
+.person:hover .photo>img{transform:scale(1.03);filter:saturate(1)}
+.person .ph{width:100%;height:100%;position:relative;display:grid;place-items:center;background:linear-gradient(160deg,#1A4A6C 0%,var(--navy) 55%,#0C2A40 100%)}
+.person .ph span{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:clamp(56px,7vw,96px);letter-spacing:.06em;color:rgba(255,255,255,.9)}
+.person .ph img{position:absolute;right:18px;bottom:18px;width:44px;opacity:.5}
+.person h3{font-size:24px;color:var(--head);margin-top:24px;padding-top:18px;border-top:2px solid var(--coral);display:inline-block;padding-right:8px}
+.person .title{font-size:15px;color:var(--fg);margin-top:6px;font-weight:500}
+.person .area{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-soft);margin-top:6px}
 .text-link{display:inline-flex;gap:10px;align-items:center;white-space:nowrap;font-family:var(--display);font-weight:600;font-size:15px;color:var(--head);text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:4px}
 
 .purpose{background:var(--surface);text-align:left}
@@ -163,10 +168,8 @@ footer .wrap{padding-block:64px 40px}
   .pillar .go{justify-self:start}
   .disciplines{grid-template-columns:1fr}
   .disciplines a,.disciplines a+a{padding:22px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}
-  .leader .wrap{grid-template-columns:auto 1fr;gap:20px 28px}
-  .leader .summary,.leader .text-link{grid-column:1/-1}
-  .leader .text-link{justify-self:start}
-  section.leader{padding-block:48px}
+  .people{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}
+  section.leader{padding-block:80px}
   section{padding-block:80px}
   .hero .wrap{padding-block:72px 0}
   .hero-photo{background-image:url("assets/hero-960.jpg");background-position:78% 30%}
@@ -175,7 +178,8 @@ footer .wrap{padding-block:64px 40px}
 @media (max-width:520px){
   .mast img{height:28px}
   .nav .btn{display:none}
-  .portrait{width:84px}
+  .people{grid-template-columns:1fr;gap:44px}
+  .person .photo{max-width:420px}
 }
 </style>
 </head>
@@ -213,14 +217,33 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="leader" id="people">
     <div class="wrap">
-      <div class="portrait"><img src="assets/badge-reversed.png" alt=""></div>
-      <div class="who">
-        <div class="eyebrow">Leadership</div>
-        <h2>Scott Atkinson</h2>
-        <div class="role">Principal Consultant</div>
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Our People</div>
+          <h2>The People Behind ARRC.</h2>
+        </div>
+        <a class="text-link" href="#people">Meet our people <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <p class="summary">More than 30 years of fire service leadership, rising from Firefighter to Deputy Chief, with nearly four decades as a paramedic.</p>
-      <a class="text-link" href="#people">Meet our people <span aria-hidden="true">&rarr;</span></a>
+      <div class="people">
+        <article class="person">
+          <div class="photo"><img src="assets/people-joshua-atkinson.jpg" alt="Portrait of Joshua Atkinson" loading="lazy"></div>
+          <h3>Joshua Atkinson</h3>
+          <p class="title">Chief Executive Officer</p>
+          <p class="area">Firm Leadership</p>
+        </article>
+        <article class="person">
+          <div class="photo"><div class="ph" aria-hidden="true"><span>SA</span><img src="assets/badge-reversed.png" alt=""></div></div>
+          <h3>Scott Atkinson</h3>
+          <p class="title">Principal Consultant</p>
+          <p class="area">Public Safety</p>
+        </article>
+        <article class="person">
+          <div class="photo"><div class="ph" aria-hidden="true"><span>DA</span><img src="assets/badge-reversed.png" alt=""></div></div>
+          <h3>Dexter Atkinson</h3>
+          <p class="title">Principal Consultant</p>
+          <p class="area">Aviation</p>
+        </article>
+      </div>
     </div>
   </section>
 
