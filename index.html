@@ -49,8 +49,10 @@ p{margin:0}
 /* Masthead */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
 .mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.08)}
-.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
-.mast img{height:36px;width:auto;display:block}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:96px;transition:height .3s ease}
+.mast img{height:56px;width:auto;display:block;transition:height .3s ease}
+.mast.compact .wrap{height:72px}
+.mast.compact img{height:42px}
 .nav{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:500}
 .nav a{text-decoration:none;color:var(--on-navy-soft);transition:color .2s}
 .nav a:hover{color:#fff}
@@ -62,6 +64,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 .nav .btn{padding:10px 18px}
+.nav a.btn-solid{color:var(--navy)}
+.nav a.btn-solid:hover{color:#fff}
 .menu{display:none}
 
 /* Hero */
@@ -185,7 +189,9 @@ footer .wrap{padding-block:64px 40px}
   .hero::before{background:linear-gradient(180deg,rgba(12,42,64,.78) 0%,rgba(12,42,64,.86) 50%,rgba(12,42,64,.95) 100%)}
 }
 @media (max-width:520px){
-  .mast img{height:28px}
+  .mast .wrap{height:72px}
+  .mast img,.mast.compact img{height:40px}
+  .mast.compact .wrap{height:64px}
   .nav .btn{display:none}
   .people{grid-template-columns:1fr;gap:24px}
   .person{grid-template-columns:96px 1fr;align-items:center;gap:20px}
@@ -345,5 +351,10 @@ footer .wrap{padding-block:64px 40px}
     <div class="foot-bot"><span>&copy; 2026 Atkinson Risk &amp; Resilience Consulting</span><span>arrcadvisory.com</span></div>
   </div>
 </footer>
+<script>
+(function(){var m=document.querySelector('.mast');if(!m)return;var on=false;
+function u(){var c=window.scrollY>40;if(c!==on){on=c;m.classList.toggle('compact',c);}}
+window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
 </body>
 </html>
