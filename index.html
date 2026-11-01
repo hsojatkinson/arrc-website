@@ -48,7 +48,9 @@ p{margin:0}
 
 /* Masthead */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
-.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.08)}
+html{scroll-padding-top:88px}
+.mast{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:9;background:transparent;color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,0);transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease}
+.mast.compact{background:rgba(12,42,64,.9);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);border-bottom-color:rgba(255,255,255,.08)}
 .mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:96px;transition:height .3s ease}
 .mast img{height:56px;width:auto;display:block;transition:height .3s ease}
 .mast.compact .wrap{height:72px}
@@ -72,9 +74,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden;isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:-2;background:url("assets/hero.jpg") 72% 35%/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(12,42,64,.6) 0%,rgba(12,42,64,0) 26%),
   linear-gradient(90deg,rgba(12,42,64,.94) 0%,rgba(12,42,64,.82) 38%,rgba(18,58,86,.38) 72%,rgba(18,58,86,.22) 100%),
   linear-gradient(180deg,rgba(12,42,64,0) 55%,rgba(12,42,64,.9) 100%)}
-.hero .wrap{padding-block:128px 0;position:relative}
+.hero .wrap{padding-block:232px 0;position:relative}
 .hero h1{font-size:clamp(44px,7vw,96px);font-weight:600;letter-spacing:-0.035em;line-height:1;max-width:13ch;margin-top:28px}
 .hero h1 em{font-style:normal;color:var(--coral)}
 .hero .eyebrow{color:var(--on-navy-soft)}
@@ -184,7 +187,7 @@ footer .wrap{padding-block:64px 40px}
   .people{gap:24px}
   section.leader{padding-block:80px}
   section{padding-block:80px}
-  .hero .wrap{padding-block:72px 0}
+  .hero .wrap{padding-block:152px 0}
   .hero-photo{background-image:url("assets/hero-960.jpg");background-position:78% 30%}
   .hero::before{background:linear-gradient(180deg,rgba(12,42,64,.78) 0%,rgba(12,42,64,.86) 50%,rgba(12,42,64,.95) 100%)}
 }
