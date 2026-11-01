@@ -65,15 +65,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .menu{display:none}
 
 /* Hero */
-.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
-.hero .wrap{padding-block:104px 0;position:relative}
-.hero .mark{position:absolute;right:-60px;top:40px;width:420px;opacity:.07;pointer-events:none}
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-2;background:url("assets/hero.jpg") 72% 35%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(12,42,64,.94) 0%,rgba(12,42,64,.82) 38%,rgba(18,58,86,.38) 72%,rgba(18,58,86,.22) 100%),
+  linear-gradient(180deg,rgba(12,42,64,0) 55%,rgba(12,42,64,.9) 100%)}
+.hero .wrap{padding-block:128px 0;position:relative}
 .hero h1{font-size:clamp(48px,8.4vw,112px);font-weight:600;letter-spacing:-0.035em;line-height:.98;max-width:11ch;margin-top:28px}
 .hero h1 em{font-style:normal;color:var(--coral)}
 .hero .eyebrow{color:var(--on-navy-soft)}
 .hero .lede{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--on-navy-soft);max-width:600px;margin-top:36px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px}
 .disciplines{display:grid;grid-template-columns:repeat(3,1fr);margin-top:96px;border-top:1px solid rgba(255,255,255,.14)}
+.disciplines{background:linear-gradient(180deg,rgba(12,42,64,0),rgba(12,42,64,.35))}
 .disciplines a{display:block;text-decoration:none;padding:28px 28px 36px 0;border-right:1px solid rgba(255,255,255,.14);transition:background .25s}
 .disciplines a+a{padding-left:28px}
 .disciplines a:last-child{border-right:0}
@@ -165,7 +169,8 @@ footer .wrap{padding-block:64px 40px}
   section.leader{padding-block:48px}
   section{padding-block:80px}
   .hero .wrap{padding-block:72px 0}
-  .hero .mark{width:280px;right:-80px}
+  .hero-photo{background-image:url("assets/hero-960.jpg");background-position:78% 30%}
+  .hero::before{background:linear-gradient(180deg,rgba(12,42,64,.78) 0%,rgba(12,42,64,.86) 50%,rgba(12,42,64,.95) 100%)}
 }
 @media (max-width:520px){
   .mast img{height:28px}
@@ -189,8 +194,8 @@ footer .wrap{padding-block:64px 40px}
 
 <main id="top">
   <section class="hero" style="padding-block:0">
+    <div class="hero-photo" role="img" aria-label="Two fire service leaders reviewing a map above the hills at sunrise"></div>
     <div class="wrap">
-      <img class="mark" src="assets/badge-reversed.png" alt="">
       <div class="eyebrow reveal">Strategic Advisory for High-Responsibility Organizations</div>
       <h1 class="reveal d1">Leadership in Complexity<em>.</em></h1>
       <p class="lede reveal d2">Executive advisory, strategic communications and risk expertise for organizations where the stakes are public and the margin for error is small. Grounded in decades of firsthand public safety leadership.</p>
