@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
-/* Layout: navy masthead and hero carry authority; editorial white sections below, ruled rows for the three disciplines, coral used only as rules and large type. */
+/* Layout: navy masthead and hero carry authority; editorial white sections below, ruled rows for the three pillars, coral used only as rules and large type. */
 :root{
   --navy:#123A56;        /* Deep Ocean Blue, official */
   --navy-deep:#0C2A40;
@@ -83,14 +83,18 @@ html{scroll-padding-top:88px}
 .hero .eyebrow{color:var(--on-navy-soft)}
 .hero .lede{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--on-navy-soft);max-width:600px;margin-top:36px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.disciplines{display:grid;grid-template-columns:repeat(3,1fr);margin-top:96px;border-top:1px solid rgba(255,255,255,.14)}
-.disciplines{background:linear-gradient(180deg,rgba(12,42,64,0),rgba(12,42,64,.35))}
-.disciplines a{display:block;text-decoration:none;padding:28px 28px 36px 0;border-right:1px solid rgba(255,255,255,.14);transition:background .25s}
-.disciplines a+a{padding-left:28px}
-.disciplines a:last-child{border-right:0}
-.disciplines .k{font-family:var(--display);font-stretch:118%;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-navy-soft)}
-.disciplines h3{font-size:22px;margin-top:12px;color:#fff;font-weight:600}
-.disciplines a:hover h3{color:var(--coral)}
+.pillars{margin-top:88px;padding-top:28px;padding-bottom:48px;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:stretch}
+.pillars-label{grid-column:1/-1}
+.pillars-label{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-navy-soft);display:flex;align-items:center;gap:14px;padding-top:0}
+.pillars-label::before{content:"";width:28px;height:2px;background:var(--coral);flex:none}
+.pillar-link{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#fff;padding-left:24px;border-left:1px solid rgba(255,255,255,.16);min-width:0}
+.pillar-link h3{font-size:20px;font-weight:600;line-height:1.25;letter-spacing:-0.01em;color:#fff;transition:color .2s}
+.pillar-link p{font-size:15px;line-height:1.55;color:var(--on-navy-soft)}
+.pillar-link .more{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.02em;color:#fff;display:inline-flex;gap:8px;align-items:center;margin-top:auto;padding-top:6px;opacity:.75;transition:opacity .2s}
+.pillar-link .more .arr{transition:transform .2s}
+.pillar-link:hover h3{color:var(--coral)}
+.pillar-link:hover .more{opacity:1}
+.pillar-link:hover .more .arr{transform:translateX(4px)}
 
 /* Sections */
 section{padding-block:120px}
@@ -181,8 +185,8 @@ footer .wrap{padding-block:64px 40px}
   .leader+.intro .wrap{padding-top:80px}
   .pillar{grid-template-columns:1fr;gap:20px}
   .pillar .go{justify-self:start}
-  .disciplines{grid-template-columns:1fr}
-  .disciplines a,.disciplines a+a{padding:22px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .pillars{grid-template-columns:1fr;gap:28px;margin-top:64px}
+  .pillar-link{padding-left:20px}
   .leader .wrap{grid-template-columns:1fr;gap:56px}
   .people{gap:24px}
   section.leader{padding-block:80px}
@@ -227,11 +231,24 @@ footer .wrap{padding-block:64px 40px}
         <a class="btn btn-solid" href="#expertise">Explore Our Expertise <span class="arr" aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-line" href="#contact">Connect With ARRC</a>
       </div>
-      <nav class="disciplines reveal d4" aria-label="Disciplines">
-        <a href="#expertise"><div class="k">Discipline</div><h3>Executive Leadership &amp; Advisory</h3></a>
-        <a href="#expertise"><div class="k">Discipline</div><h3>Strategic Communications &amp; Public Relations</h3></a>
-        <a href="#expertise"><div class="k">Discipline</div><h3>Risk, Readiness &amp; Resilience</h3></a>
-      </nav>
+      <div class="pillars reveal d4">
+        <div class="pillars-label">Our Three Pillars</div>
+        <a class="pillar-link" href="services.html#leadership">
+          <h3>Executive Leadership &amp; Advisory</h3>
+          <p>Counsel for leaders facing change, succession and high-stakes decisions.</p>
+          <span class="more">Learn more <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="pillar-link" href="services.html#communications">
+          <h3>Strategic Communications &amp; Public Relations</h3>
+          <p>Protecting public trust before, during and after a crisis.</p>
+          <span class="more">Learn more <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="pillar-link" href="services.html#resilience">
+          <h3>Risk, Readiness &amp; Resilience</h3>
+          <p>Strengthening the capacity to anticipate, absorb and recover from disruption.</p>
+          <span class="more">Learn more <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
     </div>
   </section>
 
