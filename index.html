@@ -83,7 +83,7 @@ html{scroll-padding-top:88px}
 .hero .eyebrow{color:var(--on-navy-soft)}
 .hero .lede{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--on-navy-soft);max-width:600px;margin-top:36px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.pillars{margin-top:88px;padding-top:28px;padding-bottom:48px;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:stretch}
+.pillars{margin-top:88px;padding-top:28px;padding-bottom:168px;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:stretch}
 .pillars-label{grid-column:1/-1}
 .pillars-label{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-navy-soft);display:flex;align-items:center;gap:14px;padding-top:0}
 .pillars-label::before{content:"";width:28px;height:2px;background:var(--coral);flex:none}
@@ -128,7 +128,10 @@ section{padding-block:120px}
 .difference .copy{display:grid;gap:20px;color:var(--on-navy-soft)}
 .difference .copy p:first-child{color:#fff;font-size:21px;line-height:1.5}
 
-.leader{padding-block:120px}
+.leader{padding-block:0 120px;position:relative;z-index:2;overflow-x:clip}
+.leader .wrap{margin-top:-112px;padding-top:88px;position:relative;isolation:isolate}
+.leader .wrap::before{content:"";position:absolute;top:0;bottom:0;left:-40px;right:-40px;background:var(--bg);z-index:-1;box-shadow:0 -24px 48px -24px rgba(8,26,40,.35)}
+.leader .wrap::after{content:"";position:absolute;top:0;left:max(24px, env(safe-area-inset-left,0px));width:64px;height:4px;background:var(--coral)}
 .leader .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
 .people-intro h2{font-size:clamp(40px,4.6vw,60px);color:var(--head);letter-spacing:-0.03em}
 .people-intro p{margin-top:28px;font-size:19px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
@@ -187,9 +190,10 @@ footer .wrap{padding-block:64px 40px}
   .pillar .go{justify-self:start}
   .pillars{grid-template-columns:1fr;gap:28px;margin-top:64px}
   .pillar-link{padding-left:20px}
-  .leader .wrap{grid-template-columns:1fr;gap:56px}
+  .leader .wrap{grid-template-columns:1fr;gap:56px;margin-top:-56px;padding-top:56px}
+  .pillars{padding-bottom:104px}
   .people{gap:24px}
-  section.leader{padding-block:80px}
+  section.leader{padding-block:0 80px}
   section{padding-block:80px}
   .hero .wrap{padding-block:128px 0}
   .hero-photo{background-image:url("assets/hero-960.jpg");background-position:78% 30%}
