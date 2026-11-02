@@ -83,8 +83,12 @@ html{scroll-padding-top:88px}
 .hero .eyebrow{color:var(--on-navy-soft)}
 .hero .lede{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--on-navy-soft);max-width:600px;margin-top:36px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.pillars{margin-top:88px;padding-top:28px;padding-bottom:168px;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:stretch}
+.pillars{margin-top:88px;padding-top:28px;padding-bottom:clamp(96px,11vw,176px);border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:stretch}
 .pillars-label{grid-column:1/-1}
+.seam{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(64px,9vw,140px);display:block;pointer-events:none}
+.seam-fill{fill:var(--bg)}
+.seam-line{fill:none;stroke:var(--coral);stroke-width:4;vector-effect:non-scaling-stroke;stroke-linecap:round}
+
 .pillars-label{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-navy-soft);display:flex;align-items:center;gap:14px;padding-top:0}
 .pillars-label::before{content:"";width:28px;height:2px;background:var(--coral);flex:none}
 .pillar-link{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#fff;padding-left:24px;border-left:1px solid rgba(255,255,255,.16);min-width:0}
@@ -128,10 +132,7 @@ section{padding-block:120px}
 .difference .copy{display:grid;gap:20px;color:var(--on-navy-soft)}
 .difference .copy p:first-child{color:#fff;font-size:21px;line-height:1.5}
 
-.leader{padding-block:0 120px;position:relative;z-index:2;overflow-x:clip}
-.leader .wrap{margin-top:-112px;padding-top:88px;position:relative;isolation:isolate}
-.leader .wrap::before{content:"";position:absolute;top:0;bottom:0;left:-40px;right:-40px;background:var(--bg);z-index:-1;box-shadow:0 -24px 48px -24px rgba(8,26,40,.35)}
-.leader .wrap::after{content:"";position:absolute;top:0;left:max(24px, env(safe-area-inset-left,0px));width:64px;height:4px;background:var(--coral)}
+.leader{padding-block:72px 120px}
 .leader .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
 .people-intro h2{font-size:clamp(40px,4.6vw,60px);color:var(--head);letter-spacing:-0.03em}
 .people-intro p{margin-top:28px;font-size:19px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
@@ -190,10 +191,9 @@ footer .wrap{padding-block:64px 40px}
   .pillar .go{justify-self:start}
   .pillars{grid-template-columns:1fr;gap:28px;margin-top:64px}
   .pillar-link{padding-left:20px}
-  .leader .wrap{grid-template-columns:1fr;gap:56px;margin-top:-56px;padding-top:56px}
-  .pillars{padding-bottom:104px}
+  .leader .wrap{grid-template-columns:1fr;gap:56px}
   .people{gap:24px}
-  section.leader{padding-block:0 80px}
+  section.leader{padding-block:40px 80px}
   section{padding-block:80px}
   .hero .wrap{padding-block:128px 0}
   .hero-photo{background-image:url("assets/hero-960.jpg");background-position:78% 30%}
@@ -254,6 +254,10 @@ footer .wrap{padding-block:64px 40px}
         </a>
       </div>
     </div>
+    <svg class="seam" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="seam-fill" d="M0,140 L0,128 C420,124 980,96 1440,8 L1440,140 Z"/>
+      <path class="seam-line" d="M0,128 C420,124 980,96 1440,8"/>
+    </svg>
   </section>
 
   <section class="leader" id="people">
