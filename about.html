@@ -206,9 +206,11 @@ footer .wrap{padding-block:64px 40px}
 /* Services page */
 .nav a[aria-current="page"]{color:#fff;text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:2px;text-underline-offset:10px}
 .page-hero{position:relative;overflow:hidden;isolation:isolate;background:var(--navy);color:#fff;padding-block:0}
-.page-hero .hero-photo{background-position:60% 40%}
-.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,42,64,.7) 0%,rgba(12,42,64,.55) 45%,rgba(12,42,64,.8) 100%),linear-gradient(90deg,rgba(12,42,64,.85) 0%,rgba(12,42,64,.35) 100%)}
-.page-hero .wrap{padding-block:220px 128px}
+.page-hero .hero-photo{background-image:url("assets/about-hero.jpg");background-size:cover;background-position:50% 48%}
+.page-hero{min-height:clamp(520px,52vw,820px);display:flex;align-items:flex-end}
+.page-hero>.wrap{width:100%}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,42,64,.55) 0%,rgba(12,42,64,.12) 30%,rgba(12,42,64,.1) 65%,rgba(12,42,64,.7) 100%)}
+.page-hero .wrap{padding-block:180px 72px}
 .page-hero h1{font-size:clamp(44px,7vw,100px);font-weight:600;letter-spacing:-0.035em;line-height:1}
 .page-hero h1 em{font-style:normal;color:var(--coral)}
 .segments{padding-block:120px 136px}
@@ -219,7 +221,8 @@ footer .wrap{padding-block:64px 40px}
 .seg p{margin-top:18px;font-size:18px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
 @media (max-width:960px){
   .seg-grid{grid-template-columns:1fr;gap:48px}
-  .page-hero .wrap{padding-block:152px 88px}
+  .page-hero .wrap{padding-block:152px 48px}
+  .page-hero .hero-photo{background-image:url("assets/about-hero-960.jpg");background-position:40% 60%}
   .segments{padding-block:80px 96px}
 }
 
@@ -263,7 +266,7 @@ footer .wrap{padding-block:64px 40px}
 
 <main id="top">
   <section class="page-hero">
-    <div class="hero-photo" role="img" aria-label="Fire service leaders reviewing a map above the hills at sunrise"></div>
+    <div class="hero-photo" role="img" aria-label="Scott Atkinson and a fellow Chino Valley Fire officer walking a burned hillside through the smoke"></div>
     <div class="wrap">
       <h1 class="reveal">Our Story<em>.</em></h1>
     </div>
