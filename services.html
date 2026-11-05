@@ -206,8 +206,10 @@ footer .wrap{padding-block:64px 40px}
 /* Services page */
 .nav a[aria-current="page"]{color:#fff;text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:2px;text-underline-offset:10px}
 .page-hero{position:relative;overflow:hidden;isolation:isolate;background:var(--navy);color:#fff;padding-block:0}
-.page-hero .hero-photo{background-position:60% 40%}
-.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,42,64,.7) 0%,rgba(12,42,64,.55) 45%,rgba(12,42,64,.8) 100%),linear-gradient(90deg,rgba(12,42,64,.85) 0%,rgba(12,42,64,.35) 100%)}
+.page-hero .hero-photo{background-image:url("assets/services-hero.jpg");background-size:calc(100vw + 1200px) auto;background-position:calc(0.03vw - 114px) calc(-31.9vw - 383px)}
+.page-hero{min-height:clamp(448px,34vw,620px);display:flex;align-items:flex-end}
+.page-hero>.wrap{width:100%}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,42,64,.6) 0%,rgba(12,42,64,.25) 40%,rgba(12,42,64,.55) 100%),linear-gradient(90deg,rgba(12,42,64,.88) 0%,rgba(12,42,64,.6) 45%,rgba(12,42,64,.1) 80%)}
 .page-hero .wrap{padding-block:220px 128px}
 .page-hero h1{font-size:clamp(44px,7vw,100px);font-weight:600;letter-spacing:-0.035em;line-height:1}
 .page-hero h1 em{font-style:normal;color:var(--coral)}
@@ -219,6 +221,8 @@ footer .wrap{padding-block:64px 40px}
 .seg p{margin-top:18px;font-size:18px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
 @media (max-width:960px){
   .seg-grid{grid-template-columns:1fr;gap:48px}
+  .page-hero .hero-photo{background-image:url("assets/services-hero-960.jpg");background-size:cover;background-position:48% 70%}
+  .page-hero::before{background:linear-gradient(180deg,rgba(12,42,64,.7) 0%,rgba(12,42,64,.55) 50%,rgba(12,42,64,.8) 100%)}
   .page-hero .wrap{padding-block:152px 88px}
   .segments{padding-block:80px 96px}
 }
@@ -239,7 +243,7 @@ footer .wrap{padding-block:64px 40px}
 
 <main id="top">
   <section class="page-hero">
-    <div class="hero-photo" role="img" aria-label="Fire service leaders reviewing a map above the hills at sunrise"></div>
+    <div class="hero-photo" role="img" aria-label="Scott Atkinson briefing a large assembly of fire crews in the foothills"></div>
     <div class="wrap">
       <h1 class="reveal">Advisory Services<em>.</em></h1>
     </div>
