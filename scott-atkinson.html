@@ -237,7 +237,7 @@ footer .wrap{padding-block:64px 40px}
 .profile .role{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-top:20px;display:flex;gap:14px;align-items:center}
 .profile .role::before{content:"";width:32px;height:2px;background:var(--coral);flex:none}
 .profile .intro{margin-top:24px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--on-navy-soft);max-width:54ch}
-.profile-photo{margin:0}
+.profile-photo{margin:0 clamp(0px,5vw,80px) 0 0}
 .profile-photo img{display:block;width:clamp(200px,24vw,320px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 20%;box-shadow:0 0 0 8px rgba(255,255,255,.06)}
 .stat-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;border-top:1px solid rgba(255,255,255,.14)}
 .stat-bar div{display:flex;align-items:baseline;gap:12px;padding:22px 20px 24px 0;min-width:0}
@@ -259,7 +259,7 @@ footer .wrap{padding-block:64px 40px}
 @media (max-width:960px){
   .profile .wrap{padding-block:120px 0}
   .profile-main{grid-template-columns:1fr;gap:28px;padding-bottom:48px}
-  .profile-photo{order:-1}
+  .profile-photo{order:-1;margin:0}
   .profile-photo img{width:160px}
   .stat-bar{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat-bar div,.stat-bar div+div{padding:16px 12px 16px 0;border-left:0;flex-direction:column;gap:2px}
@@ -302,7 +302,7 @@ footer .wrap{padding-block:64px 40px}
         <div><dt>30+</dt><dd>Years in the fire service</dd></div>
         <div><dt>4</dt><dd>Divisions led as Deputy Chief</dd></div>
         <div><dt>$50M</dt><dd>Annual budget overseen</dd></div>
-        <div><dt>1987</dt><dd>Paramedic since</dd></div>
+        <div><dt>NFA</dt><dd>Executive Fire Officer Program graduate</dd></div>
       </dl>
     </div>
   </section>
