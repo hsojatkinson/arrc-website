@@ -24,15 +24,15 @@
   --rule:#D5DDE4;
   --on-navy:#FFFFFF;
   --on-navy-soft:#B9C8D5;
-  --bg:var(--paper); --surface:var(--mist); --fg:var(--ink); --fg-soft:var(--ink-soft); --line:var(--rule); --head:var(--navy);
+  --bg:var(--paper); --soft:#F4F5F6; --surface:var(--mist); --fg:var(--ink); --fg-soft:var(--ink-soft); --line:var(--rule); --head:var(--navy);
   --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
   --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --wrap:1200px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A1824; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }}
+  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0A1824; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }
+  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }
 
 *{box-sizing:border-box}
 body{margin:0}
@@ -216,8 +216,28 @@ footer .wrap{padding-block:64px 40px}
 .segments{padding-block:120px 136px}
 .segments h2{font-size:clamp(36px,4.4vw,60px);color:var(--head);letter-spacing:-0.03em}
 .seg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 64px;margin-top:64px}
-.seg{border-top:4px solid var(--coral);padding-top:40px;min-width:0}
+.seg{border-top:4px solid var(--coral);padding-top:40px;min-width:0;display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.seg>*{align-self:start}
 .seg h3{font-size:clamp(24px,2.2vw,30px);color:var(--head);letter-spacing:-0.015em}
+.seg .inc{margin-top:28px;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-soft)}
+.inc-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.inc-list li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:var(--fg)}
+.inc-list li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:2px;background:var(--coral)}
+.specialized{padding-block:0 128px}
+.specialized .wrap{border-top:1px solid var(--line);padding-top:104px}
+.spec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.spec-head h2,.who h2{font-size:clamp(36px,4.4vw,60px);color:var(--head);letter-spacing:-0.03em}
+.spec-head p{max-width:44ch;color:var(--fg-soft);font-size:18px;line-height:1.6}
+.spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;margin-top:56px}
+.spec{padding-block:36px;border-top:1px solid var(--line);min-width:0}
+.spec:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+.spec h3{font-size:clamp(22px,2vw,26px);color:var(--head);letter-spacing:-0.015em}
+.spec p{margin-top:12px;font-size:17px;line-height:1.65;color:var(--fg-soft);max-width:52ch}
+.who{background:var(--soft);padding-block:112px}
+.who-grid{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 40px}
+.who-grid li{display:grid;gap:6px;align-content:start;padding-top:20px;border-top:2px solid var(--coral);min-width:0}
+.who-grid strong{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.3;color:var(--head)}
+.who-grid span{font-size:15px;line-height:1.5;color:var(--fg-soft)}
 .seg p{margin-top:18px;font-size:18px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
 @media (max-width:960px){
   .seg-grid{grid-template-columns:1fr;gap:48px}
@@ -225,6 +245,12 @@ footer .wrap{padding-block:64px 40px}
   .page-hero::before{background:linear-gradient(180deg,rgba(12,42,64,.55) 0%,rgba(12,42,64,.15) 35%,rgba(12,42,64,.45) 60%,rgba(12,42,64,.85) 100%)}
   .page-hero .wrap{padding-block:152px 88px}
   .segments{padding-block:80px 96px}
+  .specialized{padding-bottom:88px}
+  .specialized .wrap{padding-top:80px}
+  .spec-grid{grid-template-columns:1fr;margin-top:40px}
+  .spec:nth-last-child(2){border-bottom:0}
+  .who{padding-block:80px}
+  .who-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;margin-top:40px}
 }
 </style>
 </head>
@@ -256,16 +282,52 @@ footer .wrap{padding-block:64px 40px}
         <article class="seg" id="leadership">
           <h3>Executive Leadership &amp; Advisory</h3>
           <p>Senior counsel for leaders navigating organizational change, succession and high-stakes decisions, grounded in firsthand executive experience in public safety and aviation.</p>
+          <p class="inc">What this includes</p>
+          <ul class="inc-list"><li>Senior leadership advisory and executive coaching</li><li>Organizational assessments and strategic planning</li><li>Succession planning and leadership transitions</li><li>Fire and EMS program development and accreditation support</li><li>Grant strategy, writing and administration</li><li>Capital projects, station design and fleet advisory</li></ul>
         </article>
         <article class="seg" id="communications">
           <h3>Strategic Communications &amp; Public Relations</h3>
           <p>Protecting public trust before, during and after a crisis through strategic communications, reputation management and public affairs.</p>
+          <p class="inc">What this includes</p>
+          <ul class="inc-list"><li>Crisis communications planning and response</li><li>Reputation management and public affairs</li><li>Executive communications and media preparation</li><li>Stakeholder and community engagement</li><li>Public education and awareness campaigns</li></ul>
         </article>
         <article class="seg" id="resilience">
           <h3>Risk, Readiness &amp; Resilience</h3>
           <p>Identifying vulnerabilities, strengthening preparedness and building the capacity organizations need to anticipate, absorb and recover from disruption.</p>
+          <p class="inc">What this includes</p>
+          <ul class="inc-list"><li>Emergency response plan development and annual review</li><li>Plan gap analysis against national and state standards</li><li>Tabletop exercises and after-action reporting</li><li>Staff training in incident command and evacuation</li><li>Wildland-urban interface risk assessment</li><li>Event and venue emergency planning</li></ul>
         </article>
       </div>
+    </div>
+  </section>
+  <section class="specialized" id="specialized">
+    <div class="wrap">
+      <div class="spec-head">
+        <h2>Specialized Services</h2>
+        <p>Focused engagements that draw directly on decades of incident command, emergency planning and fire service operations.</p>
+      </div>
+      <div class="spec-grid">
+        <article class="spec"><h3>Emergency Response Plans</h3><p>Development, gap analysis and annual updates for organizations required to maintain formal emergency plans, aligned with national and state standards.</p></article>
+        <article class="spec"><h3>Tabletop Exercises</h3><p>Scenario-based exercises built on the Incident Command System, followed by after-action reports and corrective action plans your team can act on.</p></article>
+        <article class="spec"><h3>Wildland-Urban Interface Resilience</h3><p>Risk assessment and preparedness planning for communities, developments and associations at the wildland edge.</p></article>
+        <article class="spec"><h3>Expert Witness &amp; Litigation Support</h3><p>Case review, written opinions and testimony on fire service operations, EMS standard of care, evacuation and emergency planning.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" id="who-we-serve">
+    <div class="wrap">
+      <h2>Who We Serve</h2>
+      <ul class="who-grid">
+        <li><strong>Fire, EMS &amp; Public Safety</strong><span>Departments, districts and associations</span></li>
+        <li><strong>Government &amp; Emergency Management</strong><span>Cities, counties and state agencies</span></li>
+        <li><strong>Resorts, Hospitality &amp; Venues</strong><span>Properties with large guest populations</span></li>
+        <li><strong>Major Events</strong><span>Organizers of high-attendance events</span></li>
+        <li><strong>Development &amp; Construction</strong><span>Projects from design through occupancy</span></li>
+        <li><strong>Communities &amp; Associations</strong><span>Master-planned communities and HOAs</span></li>
+        <li><strong>Legal Counsel</strong><span>Firms handling fire, EMS and safety cases</span></li>
+        <li><strong>Education &amp; Training</strong><span>Colleges and training academies</span></li>
+      </ul>
     </div>
   </section>
 </main>
