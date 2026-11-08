@@ -198,32 +198,39 @@ footer .wrap{padding-block:64px 40px}
   .svc-intro{padding-top:24px}
   .svc-rows{margin-top:64px}
 }
-/* Home services block */
-.svc-home{background:var(--navy);color:var(--on-navy);padding-block:120px}
-.svc-home .eyebrow{color:var(--on-navy-soft)}
-.svc-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
-.svc-intro{display:grid;gap:20px;padding-top:40px}
-.svc-intro p{margin:0;font-size:17px;line-height:1.7;color:var(--on-navy-soft);max-width:58ch}
-.svc-intro .svc-def{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,30px);line-height:1.35;letter-spacing:-0.015em;color:#fff;padding-bottom:24px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.16);max-width:none}
-.svc-home h2{margin-top:22px;font-size:clamp(36px,4.4vw,62px);letter-spacing:-0.035em;line-height:1.02;color:#fff;max-width:12ch}
-.svc-head p{font-size:18px;line-height:1.7;color:var(--on-navy-soft);max-width:52ch}
-.svc-rows{margin-top:104px;border-top:1px solid rgba(255,255,255,.16)}
-.svc-row{position:relative;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,5fr) minmax(0,5fr);gap:48px;align-items:start;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.16);text-decoration:none;color:inherit}
-.svc-row::before{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--coral);transition:width .4s ease}
-.svc-row:hover::before{width:100%}
-.svc-num{font-family:var(--display);font-weight:500;font-size:clamp(44px,4.4vw,64px);line-height:.9;letter-spacing:-0.04em;color:var(--coral)}
-.svc-row h3{font-size:clamp(26px,2.5vw,36px);line-height:1.1;letter-spacing:-0.025em;color:#fff;transition:color .2s}
-.svc-row:hover h3{color:var(--coral)}
-.svc-txt p{margin:0;font-size:18px;line-height:1.65;color:var(--on-navy-soft);max-width:44ch}
-.svc-go{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff}
-.svc-go .arr{color:var(--coral);transition:transform .2s}
-.svc-row:hover .svc-go .arr{transform:translateX(5px)}
+/* Home What We Do */
+.wwd{padding:0}
+.wwd-band{position:relative;overflow:hidden;background:var(--navy-deep);color:#fff;padding-block:112px}
+.wwd-band::after{content:"";position:absolute;inset:0 0 0 45%;background:repeating-linear-gradient(118deg,rgba(255,255,255,.07) 0 1px,transparent 1px 16px),linear-gradient(90deg,transparent,rgba(43,90,128,.55));-webkit-mask-image:linear-gradient(90deg,transparent,#000 70%);mask-image:linear-gradient(90deg,transparent,#000 70%);pointer-events:none}
+.wwd-band .wrap{position:relative;z-index:1}
+.wwd-band .eyebrow{color:var(--on-navy-soft)}
+.wwd-statement{margin:28px 0 0;font-family:var(--display);font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.14;letter-spacing:-0.03em;max-width:22ch;text-wrap:balance}
+.wwd-body{padding-block:104px 120px}
+.wwd-body h2{font-size:clamp(32px,3.4vw,46px);letter-spacing:-0.03em;line-height:1.08;color:var(--head);max-width:22ch}
+.wwd-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 48px;align-items:start}
+.wwd-item{display:block;padding-top:28px;border-top:2px solid var(--navy);text-decoration:none;color:inherit;position:relative}
+.wwd-item::before{content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--coral);transition:width .35s ease}
+.wwd-item:hover::before{width:100%}
+.wwd-item h3{font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:var(--head);transition:color .2s}
+.wwd-item:hover h3{color:var(--coral)}
+.wwd-item p{margin-top:12px;font-size:16px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
+.wwd-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--head)}
+.wwd-go .arr{color:var(--coral);transition:transform .2s}
+.wwd-item:hover .wwd-go .arr{transform:translateX(4px)}
+.wwd-note{grid-column:3;grid-row:1 / span 2;padding:32px 32px 36px;background:var(--surface);border-top:2px solid var(--navy);border-bottom-right-radius:28px;display:grid;gap:16px;align-content:start}
+.wwd-note p{margin:0;font-size:16px;line-height:1.7;color:var(--fg-soft)}
+.wwd-note p:first-child{color:var(--fg);font-size:17px}
+.wwd-note .btn{justify-self:start;margin-top:12px}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--coral);color:#fff}
+.btn-navy .arr{transition:transform .2s}
+.btn-navy:hover .arr{transform:translateX(4px)}
 @media (max-width:960px){
-  .svc-home{padding-block:88px}
-  .svc-head{grid-template-columns:1fr;gap:24px}
-  .svc-rows{margin-top:48px}
-  .svc-row{grid-template-columns:1fr;gap:14px;padding:36px 0}
-  .svc-num{font-size:40px}
+  .wwd-band{padding-block:80px}
+  .wwd-band::after{inset:0 0 0 30%}
+  .wwd-body{padding-block:72px 88px}
+  .wwd-grid{grid-template-columns:1fr;gap:40px;margin-top:40px}
+  .wwd-note{grid-column:auto;grid-row:auto;order:4}
 }
 @media (prefers-reduced-motion:reduce){.reveal{animation:none}*{transition:none!important}}
 
@@ -310,35 +317,38 @@ footer .wrap{padding-block:64px 40px}
     </div>
   </section>
 
-  <section class="svc-home" id="services">
-    <div class="wrap">
-      <div class="svc-head">
-        <div>
-          <div class="eyebrow">What We Do</div>
-          <h2>A Broader Approach to Risk &amp; Resilience.</h2>
-        </div>
-        <div class="svc-intro">
-          <p class="svc-def">Risk is understanding what could go wrong. Resilience is building the capacity to respond, adapt, and emerge stronger.</p>
-          <p>At ARRC, we believe resilience extends beyond emergency preparedness. It is shaped by the strength of an organization&rsquo;s leadership, the effectiveness of its communications, and its ability to anticipate and navigate uncertainty.</p>
-          <p>Our services bring these disciplines together to help organizations make informed decisions, strengthen performance, and prepare for the challenges ahead.</p>
-        </div>
+  <section class="wwd" id="services">
+    <div class="wwd-band">
+      <div class="wrap">
+        <div class="eyebrow">What We Do</div>
+        <p class="wwd-statement">Risk is understanding what could go wrong. Resilience is building the capacity to respond, adapt, and emerge stronger.</p>
       </div>
-      <div class="svc-rows">
-        <a class="svc-row" href="services.html#leadership">
-          <span class="svc-num">01</span>
-          <h3>Executive Leadership &amp; Advisory</h3>
-          <div class="svc-txt"><p>Helping leaders make informed decisions, strengthen organizational performance, and navigate critical transitions.</p><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></div>
-        </a>
-        <a class="svc-row" href="services.html#communications">
-          <span class="svc-num">02</span>
-          <h3>Strategic Communications &amp; Public Relations</h3>
-          <div class="svc-txt"><p>Helping organizations communicate effectively, build public trust, and protect their reputation when it matters most.</p><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></div>
-        </a>
-        <a class="svc-row" href="services.html#resilience">
-          <span class="svc-num">03</span>
-          <h3>Risk, Readiness &amp; Resilience</h3>
-          <div class="svc-txt"><p>Helping organizations identify vulnerabilities, strengthen preparedness, and protect the people and operations they serve.</p><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></div>
-        </a>
+    </div>
+    <div class="wwd-body">
+      <div class="wrap">
+        <h2>A Broader Approach to Risk &amp; Resilience.</h2>
+        <div class="wwd-grid">
+          <a class="wwd-item" href="services.html#leadership">
+            <h3>Executive Leadership &amp; Advisory</h3>
+            <p>Helping leaders make informed decisions, strengthen organizational performance, and navigate critical transitions.</p>
+            <span class="wwd-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a class="wwd-item" href="services.html#communications">
+            <h3>Strategic Communications &amp; Public Relations</h3>
+            <p>Helping organizations communicate effectively, build public trust, and protect their reputation when it matters most.</p>
+            <span class="wwd-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span>
+          </a>
+          <aside class="wwd-note">
+            <p>At ARRC, we believe resilience extends beyond emergency preparedness. It is shaped by the strength of an organization&rsquo;s leadership, the effectiveness of its communications, and its ability to anticipate and navigate uncertainty.</p>
+            <p>Our services bring these disciplines together to help organizations make informed decisions, strengthen performance, and prepare for the challenges ahead.</p>
+            <a class="btn btn-navy" href="services.html">Explore Our Services <span class="arr" aria-hidden="true">&rarr;</span></a>
+          </aside>
+          <a class="wwd-item" href="services.html#resilience">
+            <h3>Risk, Readiness &amp; Resilience</h3>
+            <p>Helping organizations identify vulnerabilities, strengthen preparedness, and protect the people and operations they serve.</p>
+            <span class="wwd-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
