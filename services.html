@@ -256,6 +256,39 @@ footer .wrap{padding-block:64px 40px}
   .who{padding-block:80px}
   .who-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;margin-top:40px}
 }
+
+/* Services accordion */
+.seg-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.seg-head p{max-width:42ch;color:var(--fg-soft);font-size:18px;line-height:1.6}
+.accordion{margin-top:56px;border-top:1px solid var(--line)}
+.acc{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:32px;padding:36px 0;position:relative}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::before{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--coral);transition:width .35s ease}
+.acc[open] summary::before,.acc summary:hover::before{width:72px}
+.acc-title{display:grid;gap:8px;min-width:0}
+.acc-name{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em;line-height:1.15;color:var(--head);transition:color .2s}
+.acc summary:hover .acc-name{color:var(--coral)}
+.acc-tag{font-size:16px;color:var(--fg-soft)}
+.acc-count{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-soft);white-space:nowrap}
+.acc-icon{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;position:relative;flex:none;transition:background .2s,border-color .2s}
+.acc-icon::before,.acc-icon::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--head);transform:translate(-50%,-50%);transition:transform .25s ease}
+.acc-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc[open] .acc-icon{background:var(--navy);border-color:var(--navy)}
+.acc[open] .acc-icon::before{background:#fff}
+.acc[open] .acc-icon::after{transform:translate(-50%,-50%) rotate(0deg);background:#fff}
+.acc-body{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;padding:4px 0 48px}
+.acc-desc{font-size:18px;line-height:1.65;color:var(--fg);max-width:40ch}
+.svc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}
+.svc-list li{padding-top:16px;border-top:1px solid var(--line);min-width:0}
+.svc-list h4{margin:0;font-family:var(--display);font-weight:600;font-size:17px;line-height:1.35;color:var(--head)}
+.svc-list p{margin-top:6px;font-size:15px;line-height:1.6;color:var(--fg-soft)}
+@media (max-width:960px){
+  .acc summary{grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:28px 0}
+  .acc-count{display:none}
+  .acc-body{grid-template-columns:1fr;gap:28px;padding-bottom:36px}
+  .svc-list{grid-template-columns:1fr;gap:20px}
+}
 </style>
 </head>
 <body>
@@ -281,40 +314,64 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="segments">
     <div class="wrap">
-      <h2>Service Areas</h2>
-      <div class="seg-grid">
-        <article class="seg" id="leadership">
-          <h3>Executive Leadership &amp; Advisory</h3>
-          <p>Senior counsel for leaders navigating organizational change, succession and high-stakes decisions, grounded in firsthand executive experience in public safety and aviation.</p>
-          <p class="inc">What this includes</p>
-          <ul class="inc-list"><li>Senior leadership advisory and executive coaching</li><li>Organizational assessments and strategic planning</li><li>Succession planning and leadership transitions</li><li>Fire and EMS program development and accreditation support</li><li>Grant strategy, writing and administration</li><li>Capital projects, station design and fleet advisory</li></ul>
-        </article>
-        <article class="seg" id="communications">
-          <h3>Strategic Communications &amp; Public Relations</h3>
-          <p>Protecting public trust before, during and after a crisis through strategic communications, reputation management and public affairs.</p>
-          <p class="inc">What this includes</p>
-          <ul class="inc-list"><li>Crisis communications planning and response</li><li>Reputation management and public affairs</li><li>Executive communications and media preparation</li><li>Stakeholder and community engagement</li><li>Public education and awareness campaigns</li></ul>
-        </article>
-        <article class="seg" id="resilience">
-          <h3>Risk, Readiness &amp; Resilience</h3>
-          <p>Identifying vulnerabilities, strengthening preparedness and building the capacity organizations need to anticipate, absorb and recover from disruption.</p>
-          <p class="inc">What this includes</p>
-          <ul class="inc-list"><li>Emergency response plan development and annual review</li><li>Plan gap analysis against national and state standards</li><li>Tabletop exercises and after-action reporting</li><li>Staff training in incident command and evacuation</li><li>Wildland-urban interface risk assessment</li><li>Event and venue emergency planning</li></ul>
-        </article>
+      <div class="seg-head">
+        <h2>Service Areas</h2>
+        <p>Our work is organized around three pillars. Select a pillar to see the services within it.</p>
       </div>
-    </div>
-  </section>
-  <section class="specialized" id="specialized">
-    <div class="wrap">
-      <div class="spec-head">
-        <h2>Specialized Services</h2>
-        <p>Focused engagements that draw directly on decades of incident command, emergency planning and fire service operations.</p>
-      </div>
-      <div class="spec-grid">
-        <article class="spec"><h3>Emergency Response Plans</h3><p>Development, gap analysis and annual updates for organizations required to maintain formal emergency plans, aligned with national and state standards.</p></article>
-        <article class="spec"><h3>Tabletop Exercises</h3><p>Scenario-based exercises built on the Incident Command System, followed by after-action reports and corrective action plans your team can act on.</p></article>
-        <article class="spec"><h3>Wildland-Urban Interface Resilience</h3><p>Risk assessment and preparedness planning for communities, developments and associations at the wildland edge.</p></article>
-        <article class="spec"><h3>Expert Witness &amp; Litigation Support</h3><p>Case review, written opinions and testimony on fire service operations, EMS standard of care, evacuation and emergency planning.</p></article>
+      <div class="accordion">
+        <details class="acc" id="leadership">
+          <summary>
+            <span class="acc-title"><span class="acc-name">Executive Leadership &amp; Advisory</span><span class="acc-tag">Strengthening leadership at every level.</span></span>
+            <span class="acc-count">7 services</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="acc-body">
+            <p class="acc-desc">Senior counsel for leaders navigating organizational change, succession and high-stakes decisions, grounded in firsthand executive experience in public safety and aviation.</p>
+            <ul class="svc-list">
+            <li><h4>Senior Leadership Advisory &amp; Executive Coaching</h4><p>Confidential counsel for chiefs, directors and executive teams facing high-stakes decisions.</p></li>
+            <li><h4>Organizational Assessments &amp; Strategic Planning</h4><p>Independent review of structure, operations and performance, with a practical plan to move forward.</p></li>
+            <li><h4>Succession Planning &amp; Leadership Transitions</h4><p>Preparing the next generation of leaders and preserving institutional knowledge.</p></li>
+            <li><h4>Fire &amp; EMS Program Development</h4><p>Building, evaluating and strengthening fire and EMS programs, including accreditation readiness.</p></li>
+            <li><h4>Grant Strategy, Writing &amp; Administration</h4><p>Identifying funding, preparing competitive applications and managing awards.</p></li>
+            <li><h4>Capital Projects, Station Design &amp; Fleet</h4><p>Guidance on station construction, capital improvement and apparatus planning.</p></li>
+            <li><h4>Expert Witness &amp; Litigation Support</h4><p>Case review, written opinions and testimony on fire service operations, EMS standard of care, evacuation and emergency planning.</p></li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc" id="communications">
+          <summary>
+            <span class="acc-title"><span class="acc-name">Strategic Communications &amp; Public Relations</span><span class="acc-tag">Building trust. Strengthening reputations. Advancing missions.</span></span>
+            <span class="acc-count">5 services</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="acc-body">
+            <p class="acc-desc">Protecting public trust before, during and after a crisis through strategic communications, reputation management and public affairs.</p>
+            <ul class="svc-list">
+            <li><h4>Crisis Communications Planning &amp; Response</h4><p>Plans, protocols and counsel so leaders communicate clearly when it matters most.</p></li>
+            <li><h4>Reputation Management &amp; Public Affairs</h4><p>Protecting public trust and building relationships with officials, partners and the community.</p></li>
+            <li><h4>Executive Communications &amp; Media Preparation</h4><p>Messaging, briefings and media training for leaders who speak for their organization.</p></li>
+            <li><h4>Stakeholder &amp; Community Engagement</h4><p>Structured outreach to the people your decisions affect.</p></li>
+            <li><h4>Public Education &amp; Awareness Campaigns</h4><p>Campaigns that inform the public and support safety and preparedness goals.</p></li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc" id="resilience">
+          <summary>
+            <span class="acc-title"><span class="acc-name">Risk, Readiness &amp; Resilience</span><span class="acc-tag">Anticipating challenges. Strengthening preparedness. Building resilience.</span></span>
+            <span class="acc-count">5 services</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="acc-body">
+            <p class="acc-desc">Identifying vulnerabilities, strengthening preparedness and building the capacity organizations need to anticipate, absorb and recover from disruption.</p>
+            <ul class="svc-list">
+            <li><h4>Emergency Response Plans</h4><p>Development, gap analysis against national and state standards, and annual updates.</p></li>
+            <li><h4>Tabletop Exercises</h4><p>Scenario-based exercises built on the Incident Command System, with after-action reports and corrective action plans.</p></li>
+            <li><h4>Incident Command &amp; Evacuation Training</h4><p>Preparing staff to operate within the Incident Command System and carry out evacuations.</p></li>
+            <li><h4>Wildland-Urban Interface Resilience</h4><p>Risk assessment and preparedness planning for communities, developments and associations at the wildland edge.</p></li>
+            <li><h4>Event &amp; Venue Emergency Planning</h4><p>Safety and emergency planning for large events and high-occupancy venues.</p></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -349,6 +406,10 @@ footer .wrap{padding-block:64px 40px}
 (function(){var m=document.querySelector('.mast');if(!m)return;var on=false;
 function u(){var c=window.scrollY>40;if(c!==on){on=c;m.classList.toggle('compact',c);}}
 window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+<script>
+(function(){function openHash(){var id=location.hash.slice(1);if(!id)return;var d=document.getElementById(id);if(d&&d.tagName==='DETAILS'){d.open=true;}}
+window.addEventListener('hashchange',openHash);openHash();})();
 </script>
 </body>
 </html>
