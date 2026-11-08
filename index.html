@@ -177,21 +177,14 @@ footer .wrap{padding-block:64px 40px}
 .reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}
 @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
-/* Under-hero strip + value statement */
-.rr-strip{background:var(--soft);border-bottom:1px solid var(--line)}
-.rr-strip .wrap{display:flex;justify-content:center;align-items:center;gap:28px;padding-block:22px;text-align:center}
-.rr-strip p{margin:0;font-size:15px;line-height:1.5;color:var(--fg-soft)}
-.rr-strip strong{font-family:var(--display);font-weight:600;color:var(--head)}
-.rr-amp{font-family:var(--display);font-weight:500;font-size:22px;line-height:1;color:var(--coral)}
-.value{padding-block:104px 0;text-align:center}
-.value h2{margin:0 auto;font-size:clamp(28px,3vw,40px);line-height:1.15;letter-spacing:-0.025em;color:var(--head);max-width:26ch;text-wrap:balance}
-.value p{margin:24px auto 0;font-size:18px;line-height:1.7;color:var(--fg-soft);max-width:60ch;text-wrap:pretty}
-.value+.leader{padding-top:104px}
+/* Under-hero value statement */
+.value{padding-block:88px 0;text-align:center}
+.value p{margin:0 auto;font-size:clamp(18px,1.6vw,21px);line-height:1.65;color:var(--fg-soft);max-width:62ch;text-wrap:pretty}
+.value strong{font-weight:500;color:var(--head)}
+.value+.leader{padding-top:88px}
 @media (max-width:960px){
-  .rr-strip .wrap{flex-direction:column;gap:6px;padding-block:20px}
-  .rr-amp{font-size:18px}
-  .value{padding-top:72px}
-  .value+.leader{padding-top:80px}
+  .value{padding-top:64px}
+  .value+.leader{padding-top:72px}
 }
 /* Home services block */
 .svc-home{background:var(--navy);color:var(--on-navy);padding-block:120px}
@@ -274,18 +267,9 @@ footer .wrap{padding-block:64px 40px}
     </div>
   </section>
 
-  <div class="rr-strip">
-    <div class="wrap">
-      <p><strong>Risk</strong> is understanding what could go wrong.</p>
-      <span class="rr-amp" aria-hidden="true">&amp;</span>
-      <p><strong>Resilience</strong> is building the capacity to respond, adapt, and emerge stronger.</p>
-    </div>
-  </div>
-
   <section class="value">
     <div class="wrap">
-      <h2>Organizations face challenges that demand more than conventional advice.</h2>
-      <p>ARRC brings experienced industry professionals and senior-level strategic counsel together to provide practical solutions, informed decisions, and the confidence to move forward.</p>
+      <p><strong>Organizations face challenges that demand more than conventional advice.</strong> ARRC brings experienced industry professionals and senior-level strategic counsel together to provide practical solutions, informed decisions, and the confidence to move forward.</p>
     </div>
   </section>
 
