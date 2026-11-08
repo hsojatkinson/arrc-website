@@ -24,15 +24,15 @@
   --rule:#D5DDE4;
   --on-navy:#FFFFFF;
   --on-navy-soft:#B9C8D5;
-  --bg:var(--paper); --soft:#F4F5F6; --surface:var(--mist); --fg:var(--ink); --fg-soft:var(--ink-soft); --line:var(--rule); --head:var(--navy);
+  --bg:var(--paper); --soft:#F4F5F6; --surface:var(--mist); --fg:var(--ink); --fg-soft:var(--ink-soft); --line:var(--rule); --head:var(--navy); --chk:var(--navy);
   --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
   --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --wrap:1200px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }}
+  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; --chk:var(--coral); color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; color-scheme:dark }
+  --bg:#0A1824; --soft:#0E1C27; --surface:#0F2230; --fg:#E6ECF1; --fg-soft:#9DB0C0; --line:#22384A; --head:#FFFFFF; --navy-deep:#081A28; --chk:var(--coral); color-scheme:dark }
 
 *{box-sizing:border-box}
 body{margin:0}
@@ -238,10 +238,14 @@ footer .wrap{padding-block:64px 40px}
 .spec h3{font-size:clamp(22px,2vw,26px);color:var(--head);letter-spacing:-0.015em}
 .spec p{margin-top:12px;font-size:17px;line-height:1.65;color:var(--fg-soft);max-width:52ch}
 .who{background:var(--soft);padding-block:112px}
-.who-grid{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 40px}
-.who-grid li{display:grid;gap:6px;align-content:start;padding-top:20px;border-top:2px solid var(--coral);min-width:0}
-.who-grid strong{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.3;color:var(--head)}
-.who-grid span{font-size:15px;line-height:1.5;color:var(--fg-soft)}
+.who .sec-intro h2{margin-top:22px}
+.who-grid{list-style:none;margin:64px auto 0;padding:0;max-width:900px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 72px}
+.who-grid li{display:grid;grid-template-columns:34px 1fr;gap:18px;align-items:start;min-width:0}
+.chk{width:34px;height:34px;border-radius:50%;background:var(--chk);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 4px color-mix(in srgb,var(--chk) 14%,transparent)}
+.who-grid div{display:grid;gap:4px;min-width:0;padding-top:4px}
+.who-grid strong{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.3;color:var(--head)}
+.who-grid .chk{color:#fff}
+.who-grid div span{font-size:15px;line-height:1.5;color:var(--fg-soft)}
 .seg p{margin-top:18px;font-size:18px;line-height:1.65;color:var(--fg-soft);max-width:40ch}
 @media (max-width:960px){
   .seg-grid{grid-template-columns:1fr;gap:48px}
@@ -254,11 +258,16 @@ footer .wrap{padding-block:64px 40px}
   .spec-grid{grid-template-columns:1fr;margin-top:40px}
   .spec:nth-last-child(2){border-bottom:0}
   .who{padding-block:80px}
-  .who-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;margin-top:40px}
+  .who-grid{grid-template-columns:1fr;gap:24px;margin-top:44px;max-width:520px}
+  .eyebrow-c::before,.eyebrow-c::after{width:32px}
 }
 
 /* Services accordion */
-.seg-lede{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.4vw,44px);line-height:1.18;letter-spacing:-.015em;color:var(--head);max-width:24ch;margin:0;text-wrap:balance}
+.sec-intro{text-align:center;max-width:860px;margin-inline:auto}
+.eyebrow-c{display:flex;align-items:center;justify-content:center;gap:18px;margin:0;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--head)}
+.eyebrow-c::before,.eyebrow-c::after{content:"";width:56px;height:2px;background:var(--coral)}
+.segments h2.seg-lede{margin:22px auto 0;font-size:clamp(30px,3.6vw,48px);line-height:1.14;letter-spacing:-.02em;color:var(--head);max-width:22ch;text-wrap:balance}
+.sec-sub{margin:22px auto 0;max-width:60ch;font-size:18px;line-height:1.65;color:var(--fg-soft);text-wrap:pretty}
 .accordion{margin-top:56px;border-top:1px solid var(--line)}
 .acc{border-bottom:1px solid var(--line)}
 .acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:32px;padding:36px 0;position:relative}
@@ -313,7 +322,11 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="segments">
     <div class="wrap">
-      <p class="seg-lede">Practical counsel from people who have led through the emergencies you plan for.</p>
+      <div class="sec-intro">
+        <p class="eyebrow-c">What We Do</p>
+        <h2 class="seg-lede">Practical counsel from people who have led through the emergencies you plan for.</h2>
+        <p class="sec-sub">Our services are organized into three pillars. Open any pillar to see what we offer.</p>
+      </div>
       <div class="accordion">
         <details class="acc" id="leadership">
           <summary>
@@ -374,16 +387,20 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="who" id="who-we-serve">
     <div class="wrap">
-      <h2>Who We Serve</h2>
+      <div class="sec-intro">
+        <p class="eyebrow-c">Who We Serve</p>
+        <h2>Partners in Readiness</h2>
+        <p class="sec-sub">We work alongside the organizations responsible for keeping people safe, bringing firsthand experience to the decisions that matter most.</p>
+      </div>
       <ul class="who-grid">
-        <li><strong>Fire, EMS &amp; Public Safety</strong><span>Departments, districts and associations</span></li>
-        <li><strong>Government &amp; Emergency Management</strong><span>Cities, counties and state agencies</span></li>
-        <li><strong>Resorts, Hospitality &amp; Venues</strong><span>Properties with large guest populations</span></li>
-        <li><strong>Major Events</strong><span>Organizers of high-attendance events</span></li>
-        <li><strong>Development &amp; Construction</strong><span>Projects from design through occupancy</span></li>
-        <li><strong>Communities &amp; Associations</strong><span>Master-planned communities and HOAs</span></li>
-        <li><strong>Legal Counsel</strong><span>Firms handling fire, EMS and safety cases</span></li>
-        <li><strong>Education &amp; Training</strong><span>Colleges and training academies</span></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Fire, EMS &amp; Public Safety</strong><span>Departments, districts and associations</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Government &amp; Emergency Management</strong><span>Cities, counties and state agencies</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Resorts, Hospitality &amp; Venues</strong><span>Properties with large guest populations</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Major Events</strong><span>Organizers of high-attendance events</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Development &amp; Construction</strong><span>Projects from design through occupancy</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Communities &amp; Associations</strong><span>Master-planned communities and HOAs</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Legal Counsel</strong><span>Firms handling fire, EMS and safety cases</span></div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 8.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Education &amp; Training</strong><span>Colleges and training academies</span></div></li>
       </ul>
     </div>
   </section>
