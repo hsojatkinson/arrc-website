@@ -154,12 +154,15 @@ section{padding-block:120px}
 .triad{display:grid;gap:0;margin-top:8px;border-top:1px solid var(--line)}
 .triad span{font-family:var(--display);font-weight:600;font-size:20px;color:var(--head);padding-block:14px;border-bottom:1px solid var(--line)}
 
-.close{background:var(--navy);color:#fff}
-.close .wrap{display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:end}
-.close h2{font-size:clamp(40px,5.4vw,72px);letter-spacing:-0.03em;line-height:1;margin-top:24px}
+.close{background:var(--navy);color:#fff;padding-block:152px 136px}
 .close .eyebrow{color:var(--on-navy-soft)}
-.close p{color:var(--on-navy-soft);max-width:48ch}
-.close .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.close h2{margin-top:28px;font-size:clamp(48px,7.6vw,112px);letter-spacing:-0.045em;line-height:.98;max-width:14ch}
+.close h2 em{font-style:normal;color:var(--coral)}
+.close-row{margin-top:72px;padding-top:36px;border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.close-row p{margin:0;font-size:18px;line-height:1.7;color:var(--on-navy-soft);max-width:54ch}
+.btn-lg{padding:18px 28px;font-size:15px}
+.btn-lg .arr{transition:transform .2s}
+.btn-lg:hover .arr{transform:translateX(4px)}
 
 footer{background:var(--navy-deep);color:var(--on-navy-soft);font-size:14px}
 footer .wrap{padding-block:64px 40px}
@@ -177,13 +180,34 @@ footer .wrap{padding-block:64px 40px}
 .reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}
 @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+/* Our Story & Approach (home) */
+.story-home{padding:0;background:var(--soft);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:720px}
+.story-photo{background:url("assets/scott-fireground.jpg") center 30%/cover no-repeat;min-height:100%}
+.story-copy{padding:128px max(24px,calc((100vw - var(--wrap))/2 + 24px)) 128px 88px;max-width:calc(var(--wrap)/2 + 88px);display:grid;align-content:center;gap:20px}
+.story-copy h2{margin:4px 0 8px;font-size:clamp(32px,3.4vw,48px);letter-spacing:-0.03em;line-height:1.06;color:var(--head)}
+.story-copy p{margin:0;font-size:17px;line-height:1.75;color:var(--fg-soft);max-width:56ch}
+.story-copy .story-first{font-size:clamp(19px,1.6vw,21px);line-height:1.6;color:var(--fg)}
+.text-link{justify-self:start;margin-top:16px;display:inline-flex;align-items:center;gap:10px;padding-bottom:6px;border-bottom:2px solid var(--coral);font-family:var(--display);font-weight:600;font-size:15px;color:var(--head);text-decoration:none}
+.text-link .arr{color:var(--coral);transition:transform .2s}
+.text-link:hover .arr{transform:translateX(4px)}
+@media (max-width:960px){
+  .story-home{grid-template-columns:1fr;min-height:0}
+  .story-photo{aspect-ratio:4/3;min-height:0}
+  .story-copy{padding:64px 24px 80px;max-width:none}
+  .svc-head{grid-template-columns:1fr;gap:8px}
+  .svc-intro{padding-top:24px}
+  .svc-rows{margin-top:64px}
+}
 /* Home services block */
 .svc-home{background:var(--navy);color:var(--on-navy);padding-block:120px}
 .svc-home .eyebrow{color:var(--on-navy-soft)}
-.svc-head{display:block}
-.svc-home h2{margin-top:22px;font-size:clamp(34px,4vw,56px);letter-spacing:-0.03em;line-height:1.04;color:#fff;max-width:16ch}
+.svc-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.svc-intro{display:grid;gap:20px;padding-top:40px}
+.svc-intro p{margin:0;font-size:17px;line-height:1.7;color:var(--on-navy-soft);max-width:58ch}
+.svc-intro .svc-def{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,30px);line-height:1.35;letter-spacing:-0.015em;color:#fff;padding-bottom:24px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.16);max-width:none}
+.svc-home h2{margin-top:22px;font-size:clamp(36px,4.4vw,62px);letter-spacing:-0.035em;line-height:1.02;color:#fff;max-width:12ch}
 .svc-head p{font-size:18px;line-height:1.7;color:var(--on-navy-soft);max-width:52ch}
-.svc-rows{margin-top:80px;border-top:1px solid rgba(255,255,255,.16)}
+.svc-rows{margin-top:104px;border-top:1px solid rgba(255,255,255,.16)}
 .svc-row{position:relative;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,5fr) minmax(0,5fr);gap:48px;align-items:start;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.16);text-decoration:none;color:inherit}
 .svc-row::before{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--coral);transition:width .4s ease}
 .svc-row:hover::before{width:100%}
@@ -205,7 +229,9 @@ footer .wrap{padding-block:64px 40px}
 
 @media (max-width:960px){
   .nav a:not(.btn){display:none}
-  .intro .wrap,.difference .wrap,.purpose .wrap,.close .wrap{grid-template-columns:1fr;gap:40px}
+  .intro .wrap,.difference .wrap,.purpose .wrap{grid-template-columns:1fr;gap:40px}
+  .close{padding-block:104px 96px}
+  .close-row{margin-top:48px;flex-direction:column;align-items:flex-start;gap:28px}
   .intro .copy{padding-top:0}
   .leader+.intro .wrap{padding-top:80px}
   .rr{padding-block:80px}
@@ -289,7 +315,12 @@ footer .wrap{padding-block:64px 40px}
       <div class="svc-head">
         <div>
           <div class="eyebrow">What We Do</div>
-          <h2>Expertise That Makes a Difference.</h2>
+          <h2>A Broader Approach to Risk &amp; Resilience.</h2>
+        </div>
+        <div class="svc-intro">
+          <p class="svc-def">Risk is understanding what could go wrong. Resilience is building the capacity to respond, adapt, and emerge stronger.</p>
+          <p>At ARRC, we believe resilience extends beyond emergency preparedness. It is shaped by the strength of an organization&rsquo;s leadership, the effectiveness of its communications, and its ability to anticipate and navigate uncertainty.</p>
+          <p>Our services bring these disciplines together to help organizations make informed decisions, strengthen performance, and prepare for the challenges ahead.</p>
         </div>
       </div>
       <div class="svc-rows">
@@ -312,43 +343,25 @@ footer .wrap{padding-block:64px 40px}
     </div>
   </section>
 
-  <section class="rr" id="risk-resilience">
-    <div class="wrap">
-      <div class="rr-head">
-        <h2>What is <span style="white-space:nowrap">Risk &amp; Resilience?</span></h2>
-        <p class="rr-sub"><strong>Risk</strong> is understanding what could go wrong. <strong>Resilience</strong> is building the capacity to respond, adapt, and emerge stronger.</p>
-      </div>
-      <div class="copy">
-        <p>Together, risk and resilience represent an organization's ability to anticipate challenges, navigate uncertainty, and maintain effectiveness when it matters most.</p>
-        <p>At ARRC, we believe risk and resilience extend beyond emergency preparedness and crisis management. They are fundamental to effective leadership, strategic decision-making, organizational culture, and communications.</p>
-        <p>Our approach brings these disciplines together, helping organizations not only prepare for the unexpected but also build the leadership, capabilities, and confidence to succeed in an increasingly complex world.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="intro" id="about">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">Our Approach</div>
-        <h2>Built on Experience. Driven by Purpose.</h2>
-      </div>
-      <div class="copy">
-        <p>Effective advice begins with understanding the environment a leader actually works in.</p>
-        <p>ARRC is built on a practitioner model. Our guidance comes from people who have led departments, managed budgets, answered to elected officials and made decisions under public scrutiny, not from theory alone.</p>
-        <p>We pair that operational perspective with disciplined strategy, executive advisory and communications expertise, so leaders can strengthen their organizations and prepare for what comes next.</p>
-      </div>
+  <section class="story-home" id="our-story">
+    <div class="story-photo" role="img" aria-label="Scott Atkinson on the fireground, his name on the back of his helmet"></div>
+    <div class="story-copy">
+      <div class="eyebrow">Our Story &amp; Approach</div>
+      <h2>Built on Experience. Driven by Purpose.</h2>
+      <p class="story-first">ARRC was founded on a simple belief: the knowledge gained over a career of service and leadership should continue to make an impact long beyond retirement.</p>
+      <p>What began as a vision to empower experienced first responders to share their expertise has grown into a broader approach to consulting, connecting organizations with professionals who understand their challenges firsthand.</p>
+      <p>Our guidance comes from people who have led teams, managed critical situations, and carried the responsibilities our clients face. We combine that practical perspective with strategic expertise to deliver counsel grounded in experience, not theory alone.</p>
+      <a class="text-link" href="about.html">Discover Our Story <span class="arr" aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
   <section class="close" id="contact">
     <div class="wrap">
-      <div>
-        <div class="eyebrow">Start a Conversation</div>
-        <h2>Prepared to Lead. Built to Endure.</h2>
-      </div>
-      <div>
-        <p>Whether you are navigating organizational change, developing leaders, strengthening communications or preparing for emerging risks, the right perspective changes what is possible.</p>
-        <div class="ctas"><a class="btn btn-solid" href="#contact">Start a Conversation <span class="arr" aria-hidden="true">&rarr;</span></a></div>
+      <div class="eyebrow">Start a Conversation</div>
+      <h2>Let&rsquo;s Address <em>What&rsquo;s Next.</em></h2>
+      <div class="close-row">
+        <p>Every organization faces challenges that require experienced perspective. Whether you&rsquo;re navigating change, strengthening leadership, or preparing for emerging risks, we&rsquo;re here to help.</p>
+        <a class="btn btn-solid btn-lg" href="#contact">Start a Conversation <span class="arr" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
