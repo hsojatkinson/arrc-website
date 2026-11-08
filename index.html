@@ -177,26 +177,10 @@ footer .wrap{padding-block:64px 40px}
 .reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}
 @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
-/* Bridge: value + Risk & Resilience definition */
-.bridge{background:var(--soft);padding-block:112px}
-.bridge-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end}
-.bridge-lead{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-0.03em;color:var(--head);max-width:20ch;text-wrap:balance}
-.bridge-lead::before{content:"";display:block;width:64px;height:4px;background:var(--coral);margin-bottom:32px}
-.bridge-body{margin:0;font-size:18px;line-height:1.7;color:var(--fg-soft);max-width:48ch}
-.bridge-def{margin-top:80px;padding-top:48px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:56px;align-items:start}
-.def h3{font-size:clamp(34px,3.6vw,52px);letter-spacing:-0.035em;line-height:1;color:var(--head)}
-.def p{margin-top:16px;font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:var(--fg);max-width:30ch}
-.def-amp{align-self:center;font-family:var(--display);font-weight:500;font-size:clamp(80px,9vw,128px);line-height:.8;color:var(--coral)}
-@media (max-width:960px){
-  .bridge{padding-block:80px}
-  .bridge-top{grid-template-columns:1fr;gap:24px}
-  .bridge-def{margin-top:56px;padding-top:40px;grid-template-columns:1fr;gap:20px;justify-items:start}
-  .def-amp{font-size:64px}
-}
 /* Home services block */
 .svc-home{background:var(--navy);color:var(--on-navy);padding-block:120px}
 .svc-home .eyebrow{color:var(--on-navy-soft)}
-.svc-head{display:block}
+.svc-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:end}
 .svc-home h2{margin-top:22px;font-size:clamp(34px,4vw,56px);letter-spacing:-0.03em;line-height:1.04;color:#fff;max-width:16ch}
 .svc-head p{font-size:18px;line-height:1.7;color:var(--on-navy-soft);max-width:52ch}
 .svc-rows{margin-top:80px;border-top:1px solid rgba(255,255,255,.16)}
@@ -274,26 +258,6 @@ footer .wrap{padding-block:64px 40px}
     </div>
   </section>
 
-  <section class="bridge" aria-label="Our value">
-    <div class="wrap">
-      <div class="bridge-top">
-        <p class="bridge-lead">Organizations face challenges that demand more than conventional advice.</p>
-        <p class="bridge-body">ARRC brings experienced industry professionals and senior-level strategic counsel together to provide practical solutions, informed decisions, and the confidence to move forward.</p>
-      </div>
-      <div class="bridge-def">
-        <div class="def">
-          <h3>Risk</h3>
-          <p>Understanding what could go wrong.</p>
-        </div>
-        <span class="def-amp" aria-hidden="true">&amp;</span>
-        <div class="def">
-          <h3>Resilience</h3>
-          <p>Building the capacity to respond, adapt, and emerge stronger.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="leader" id="people">
     <div class="wrap">
       <div class="people-intro">
@@ -327,6 +291,7 @@ footer .wrap{padding-block:64px 40px}
           <div class="eyebrow">What We Do</div>
           <h2>Expertise That Makes a Difference.</h2>
         </div>
+        <p>Organizations face challenges that demand more than conventional advice. ARRC brings experienced industry professionals and senior-level strategic counsel together to provide practical solutions, informed decisions, and the confidence to move forward.</p>
       </div>
       <div class="svc-rows">
         <a class="svc-row" href="services.html#leadership">
