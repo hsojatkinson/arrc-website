@@ -253,7 +253,6 @@ footer .wrap{padding-block:64px 40px}
   .page-hero::before{background:linear-gradient(180deg,rgba(12,42,64,.55) 0%,rgba(12,42,64,.15) 35%,rgba(12,42,64,.45) 60%,rgba(12,42,64,.85) 100%)}
   .page-hero .wrap{padding-block:152px 88px}
   .segments{padding-block:80px 96px}
-  .seg-intro{grid-template-columns:1fr;gap:24px}
   .specialized{padding-bottom:88px}
   .specialized .wrap{padding-top:80px}
   .spec-grid{grid-template-columns:1fr;margin-top:40px}
@@ -267,18 +266,30 @@ footer .wrap{padding-block:64px 40px}
 .sec-intro{text-align:center;max-width:860px;margin-inline:auto}
 .eyebrow-c{display:flex;align-items:center;justify-content:center;gap:18px;margin:0;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--head)}
 .eyebrow-c::before,.eyebrow-c::after{content:"";width:56px;height:2px;background:var(--coral)}
-.segments h2.seg-lede{margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.18;letter-spacing:-.015em;color:var(--head);max-width:26ch;text-wrap:balance}
-.seg-intro{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end}
-.seg-sub{margin:0;max-width:62ch;font-size:18px;line-height:1.65;color:var(--fg-soft);text-wrap:pretty}
+.segments .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.seg-side{position:sticky;top:120px}
+.segments h2.seg-lede{margin:0;font-size:clamp(30px,3vw,44px);line-height:1.1;letter-spacing:-.025em;color:var(--head);text-wrap:balance}
+.segments h2.seg-lede::after{content:"";display:block;width:64px;height:4px;background:var(--coral);margin-top:32px}
+.pill-nav{margin-top:40px;display:grid;border-top:1px solid var(--line)}
+.pill-nav a{display:grid;grid-template-columns:36px 1fr;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:16px;line-height:1.35;color:var(--fg-soft);text-decoration:none;transition:color .2s,padding .25s}
+.pill-nav a span{font-stretch:118%;font-size:11px;letter-spacing:.16em;color:var(--fg-soft);transition:color .2s}
+.pill-nav a:hover,.pill-nav a.on{color:var(--head);padding-left:8px}
+.pill-nav a:hover span,.pill-nav a.on span{color:var(--coral)}
+.seg-sub{margin:0;max-width:62ch;font-size:clamp(20px,1.8vw,23px);line-height:1.55;color:var(--fg);font-weight:500;text-wrap:pretty}
+.acc-num{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--coral)}
+.closer{background:var(--navy);color:#fff;padding-block:112px}
+.closer .wrap{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.closer p{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,64px);letter-spacing:-0.03em;line-height:1.08;text-wrap:balance}
+.closer em{font-style:normal;color:var(--coral)}
 .sec-sub{margin:22px auto 0;max-width:60ch;font-size:18px;line-height:1.65;color:var(--fg-soft);text-wrap:pretty}
-.accordion{margin-top:56px;border-top:1px solid var(--line)}
-.acc{border-bottom:1px solid var(--line)}
-.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:32px;padding:36px 0;position:relative}
+.accordion{margin-top:48px;border-top:1px solid var(--line)}
+.acc{border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:28px;padding:32px 0;position:relative}
 .acc summary::-webkit-details-marker{display:none}
 .acc summary::before{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--coral);transition:width .35s ease}
 .acc[open] summary::before,.acc summary:hover::before{width:72px}
 .acc-title{display:grid;gap:8px;min-width:0}
-.acc-name{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em;line-height:1.15;color:var(--head);transition:color .2s}
+.acc-name{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.1vw,28px);letter-spacing:-0.02em;line-height:1.15;color:var(--head);transition:color .2s}
 .acc summary:hover .acc-name{color:var(--coral)}
 .acc-tag{font-size:16px;color:var(--fg-soft)}
 .acc-count{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-soft);white-space:nowrap}
@@ -288,8 +299,8 @@ footer .wrap{padding-block:64px 40px}
 .acc[open] .acc-icon{background:var(--navy);border-color:var(--navy)}
 .acc[open] .acc-icon::before{background:#fff}
 .acc[open] .acc-icon::after{transform:translate(-50%,-50%) rotate(0deg);background:#fff}
-.acc-body{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;padding:4px 0 48px}
-.acc-desc{font-size:18px;line-height:1.65;color:var(--fg);max-width:40ch}
+.acc-body{display:grid;gap:28px;padding:4px 0 44px}
+.acc-desc{font-size:17px;line-height:1.65;color:var(--fg-soft);max-width:60ch}
 .svc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}
 .svc-list li{padding-top:16px;border-top:1px solid var(--line);min-width:0}
 .svc-list h4{margin:0;font-family:var(--display);font-weight:600;font-size:17px;line-height:1.35;color:var(--head)}
@@ -297,6 +308,11 @@ footer .wrap{padding-block:64px 40px}
 @media (max-width:960px){
   .acc summary{grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:28px 0}
   .acc-count{display:none}
+  .segments .wrap{grid-template-columns:1fr;gap:32px}
+  .seg-side{position:static}
+  .pill-nav{display:none}
+  .closer{padding-block:80px}
+  .closer .wrap{display:grid;gap:32px;justify-items:start}
   .acc-body{grid-template-columns:1fr;gap:28px;padding-bottom:36px}
   .svc-list{grid-template-columns:1fr;gap:20px}
 }
@@ -325,14 +341,20 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="segments">
     <div class="wrap">
-      <div class="seg-intro">
-      <h2 class="seg-lede">Specialized Consulting for Organizations Where Leadership, Risk, and Resilience Matter Most.</h2>
+      <aside class="seg-side">
+        <h2 class="seg-lede">Specialized Consulting for Organizations Where Leadership, Risk, and Resilience Matter Most.</h2>
+        <nav class="pill-nav" aria-label="Service pillars">
+          <a href="#leadership" data-target="leadership"><span>01</span>Executive Leadership &amp; Advisory</a>
+          <a href="#communications" data-target="communications"><span>02</span>Strategic Communications &amp; Public Relations</a>
+          <a href="#resilience" data-target="resilience"><span>03</span>Risk, Readiness &amp; Resilience</a>
+        </nav>
+      </aside>
+      <div class="seg-main">
       <p class="seg-sub">We work alongside public safety agencies, aviation organizations, and other high-responsibility industries to develop tailored solutions informed by firsthand experience. Our approach brings practical insight and strategic perspective to the decisions that matter most.</p>
-      </div>
       <div class="accordion">
         <details class="acc" id="leadership">
           <summary>
-            <span class="acc-title"><span class="acc-name">Executive Leadership &amp; Advisory</span><span class="acc-tag">Strengthening leadership at every level.</span></span>
+            <span class="acc-title"><span class="acc-num">01</span><span class="acc-name">Executive Leadership &amp; Advisory</span><span class="acc-tag">Strengthening leadership at every level.</span></span>
             <span class="acc-count">7 services</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </summary>
@@ -351,7 +373,7 @@ footer .wrap{padding-block:64px 40px}
         </details>
         <details class="acc" id="communications">
           <summary>
-            <span class="acc-title"><span class="acc-name">Strategic Communications &amp; Public Relations</span><span class="acc-tag">Building trust. Strengthening reputations. Advancing missions.</span></span>
+            <span class="acc-title"><span class="acc-num">02</span><span class="acc-name">Strategic Communications &amp; Public Relations</span><span class="acc-tag">Building trust. Strengthening reputations. Advancing missions.</span></span>
             <span class="acc-count">5 services</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </summary>
@@ -368,7 +390,7 @@ footer .wrap{padding-block:64px 40px}
         </details>
         <details class="acc" id="resilience">
           <summary>
-            <span class="acc-title"><span class="acc-name">Risk, Readiness &amp; Resilience</span><span class="acc-tag">Anticipating challenges. Strengthening preparedness. Building resilience.</span></span>
+            <span class="acc-title"><span class="acc-num">03</span><span class="acc-name">Risk, Readiness &amp; Resilience</span><span class="acc-tag">Anticipating challenges. Strengthening preparedness. Building resilience.</span></span>
             <span class="acc-count">5 services</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </summary>
@@ -383,6 +405,7 @@ footer .wrap{padding-block:64px 40px}
             </ul>
           </div>
         </details>
+      </div>
       </div>
     </div>
   </section>
@@ -406,6 +429,13 @@ footer .wrap{padding-block:64px 40px}
       </ul>
     </div>
   </section>
+
+  <section class="closer">
+    <div class="wrap">
+      <p>Experience that has been tested.<br><em>Ready when you need it.</em></p>
+      <a class="btn btn-solid" href="./#contact">Start a Conversation</a>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -424,7 +454,11 @@ window.addEventListener('scroll',u,{passive:true});u();})();
 </script>
 <script>
 (function(){function openHash(){var id=location.hash.slice(1);if(!id)return;var d=document.getElementById(id);if(d&&d.tagName==='DETAILS'){d.open=true;}}
-window.addEventListener('hashchange',openHash);openHash();})();
+window.addEventListener('hashchange',openHash);openHash();
+var links=[].slice.call(document.querySelectorAll('.pill-nav a'));
+links.forEach(function(a){a.addEventListener('click',function(e){var d=document.getElementById(a.dataset.target);if(!d)return;e.preventDefault();d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+d.id);});});
+function act(){var cur=null;links.forEach(function(a){var d=document.getElementById(a.dataset.target);if(d&&d.getBoundingClientRect().top<window.innerHeight*0.45)cur=a;});links.forEach(function(a){a.classList.toggle('on',a===cur);});}
+window.addEventListener('scroll',act,{passive:true});act();})();
 </script>
 </body>
 </html>
