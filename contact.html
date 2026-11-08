@@ -281,27 +281,30 @@ footer .wrap{padding-block:64px 40px}
 }
 
 /* Contact page */
-.contact-page{position:relative;background:var(--navy-deep);padding:152px 0 112px;overflow:hidden;isolation:isolate}
-.contact-page::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/hero.jpg") center 40%/cover no-repeat;opacity:.35}
-.contact-page::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,26,40,.75),rgba(8,26,40,.92))}
-.contact-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--bg);box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden}
+.contact-page{background:var(--soft);padding:104px 0 120px}
+.contact-hero{min-height:clamp(420px,42vw,620px)}
+.contact-hero::before{background:linear-gradient(90deg,rgba(12,42,64,.78) 0%,rgba(12,42,64,.45) 40%,rgba(12,42,64,.1) 75%),linear-gradient(180deg,rgba(12,42,64,.55) 0%,rgba(12,42,64,0) 30%,rgba(12,42,64,0) 70%,rgba(12,42,64,.6) 100%)!important}
+.contact-hero .hero-photo{background-image:url("assets/contact-hero.jpg")!important;background-position:50% 58%!important}
+.contact-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--bg);box-shadow:0 24px 60px rgba(18,58,86,.12);overflow:hidden}
 .contact-intro{position:relative;background:var(--navy);color:#fff;padding:72px 56px;display:grid;align-content:center;justify-items:center;text-align:center;gap:22px;overflow:hidden}
 .contact-intro::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(118deg,rgba(255,255,255,.05) 0 1px,transparent 1px 16px);-webkit-mask-image:linear-gradient(0deg,#000,transparent 70%);mask-image:linear-gradient(0deg,#000,transparent 70%);pointer-events:none}
 .contact-intro>*{position:relative;z-index:1}
 .contact-intro img{width:96px;height:auto}
 .contact-eyebrow{display:flex;align-items:center;gap:18px;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-navy-soft)}
 .contact-eyebrow::before,.contact-eyebrow::after{content:"";width:44px;height:2px;background:var(--coral)}
-.contact-intro h1{font-size:clamp(32px,3.2vw,46px);letter-spacing:-0.035em;line-height:1.05;color:#fff;max-width:13ch}
-.contact-intro h1 em{display:block;font-style:normal;color:var(--coral)}
+.contact-intro h2{font-size:clamp(30px,3vw,42px);letter-spacing:-0.035em;line-height:1.08;color:#fff;max-width:12ch;margin-top:6px}
+.contact-intro h2 em{font-style:normal;color:var(--coral)}
 .contact-intro p{margin:0;font-size:17px;line-height:1.65;color:var(--on-navy-soft);max-width:34ch}
 .contact-pillars{list-style:none;margin:8px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:grid;gap:8px;font-family:var(--display);font-weight:600;font-size:14px;color:#fff}
 .contact-form{padding:64px 56px 56px}
 .contact-form h2{font-size:clamp(30px,3vw,40px);letter-spacing:-0.03em;color:var(--head);text-align:center}
-.form-grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.form-legend{margin:10px 0 0;text-align:center;font-size:14px;color:var(--fg-soft)}
+.form-legend span{color:var(--coral);font-weight:600}
+.form-grid{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .field{display:grid;gap:8px;min-width:0}
 .field.full{grid-column:1 / -1}
 .field label{font-size:15px;font-weight:500;color:var(--fg)}
-.field label .req{margin-left:6px;font-size:13px;color:var(--coral);font-weight:500}
+.field label .req{margin-left:4px;color:var(--coral);font-weight:600}
 .field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:0;padding:14px 16px;transition:border-color .2s,box-shadow .2s}
 .field textarea{min-height:150px;resize:vertical}
 .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23123A56' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
@@ -312,7 +315,8 @@ footer .wrap{padding-block:64px 40px}
 .btn-navy:hover{background:var(--coral);color:#fff}
 .form-note{margin-top:16px;font-size:13px;color:var(--fg-soft);text-align:right}
 @media (max-width:960px){
-  .contact-page{padding:112px 0 72px}
+  .contact-page{padding:56px 0 72px}
+  .contact-hero .hero-photo{background-image:url("assets/contact-hero-960.jpg")!important;background-position:40% 65%!important}
   .contact-card{grid-template-columns:1fr}
   .contact-intro{padding:56px 28px}
   .contact-form{padding:48px 24px 40px}
@@ -336,29 +340,31 @@ footer .wrap{padding-block:64px 40px}
 </header>
 
 <main id="top">
+  <section class="page-hero contact-hero">
+    <div class="hero-photo" role="img" aria-label="Fire engines from Ontario and Chino Valley parked on an airfield as a Mercy Air helicopter flies overhead"></div>
+    <div class="wrap">
+      <h1 class="reveal">Contact<em>.</em></h1>
+    </div>
+  </section>
+
   <section class="contact-page">
     <div class="wrap">
       <div class="contact-card">
         <div class="contact-intro">
           <img src="assets/badge-reversed.png" alt="ARRC">
           <div class="contact-eyebrow">Contact Us</div>
-          <h1>The Kind Of R&amp;R <em>That Matters Most.</em></h1>
-          <p>Your challenges are unique. So is our approach. Let&rsquo;s address what&rsquo;s next, together.</p>
-          <ul class="contact-pillars">
-            <li>Executive Leadership &amp; Advisory</li>
-            <li>Strategic Communications &amp; Public Relations</li>
-            <li>Risk, Readiness &amp; Resilience</li>
-          </ul>
+          <h2>Empowering the Future of Risk&nbsp;&amp;&nbsp;Resilience<em>.</em></h2>
         </div>
         <form class="contact-form" id="contact-form" action="#" method="POST" onsubmit="return false">
           <h2>Start a Conversation</h2>
+          <p class="form-legend"><span aria-hidden="true">*</span> Required</p>
           <div class="form-grid">
             <div class="field"><label for="first">First Name</label><input id="first" name="first_name" type="text" autocomplete="given-name"></div>
             <div class="field"><label for="last">Last Name</label><input id="last" name="last_name" type="text" autocomplete="family-name"></div>
-            <div class="field"><label for="email">Email<span class="req">(Required)</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="phone">Phone<span class="req">(Required)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(999) 999-9999" required></div>
+            <div class="field"><label for="email">Email<span class="req" aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="phone">Phone<span class="req" aria-hidden="true">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(999) 999-9999" required></div>
             <div class="field full"><label for="org">Organization</label><input id="org" name="organization" type="text" autocomplete="organization"></div>
-            <div class="field full"><label for="source">How Did You Hear About Us?<span class="req">(Required)</span></label>
+            <div class="field full"><label for="source">How Did You Hear About Us?<span class="req" aria-hidden="true">*</span></label>
               <select id="source" name="source" required>
                 <option value="" disabled selected>Select one</option>
                 <option>Word of Mouth</option>
