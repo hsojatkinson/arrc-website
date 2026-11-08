@@ -177,6 +177,37 @@ footer .wrap{padding-block:64px 40px}
 .reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}
 @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+/* Home services block */
+.svc-home{background:var(--navy);color:var(--on-navy);padding-block:120px;position:relative;overflow:hidden}
+.svc-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end}
+.svc-home .eyebrow{color:var(--on-navy-soft)}
+.svc-home h2{margin-top:22px;font-size:clamp(32px,3.6vw,50px);letter-spacing:-0.03em;line-height:1.06;color:#fff;max-width:20ch}
+.svc-head p{font-size:18px;line-height:1.7;color:var(--on-navy-soft);max-width:46ch}
+.svc-cards{margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:0}
+.svc-card{position:relative;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;align-content:start;padding:40px 34px 32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;min-width:0;transition:background .25s,border-color .25s,transform .25s}
+.svc-card::before{content:"";position:absolute;left:-1px;top:-1px;height:3px;width:56px;background:var(--coral);transition:width .35s ease}
+.svc-card:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);transform:translateY(-4px)}
+.svc-card:hover::before{width:calc(100% + 2px)}
+.svc-num{font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--coral)}
+.svc-card h3{margin-top:20px;font-size:clamp(22px,1.9vw,26px);line-height:1.18;letter-spacing:-0.02em;color:#fff}
+.svc-tag{margin-top:12px;font-size:15px;line-height:1.55;color:var(--on-navy-soft)}
+.svc-card ul{list-style:none;margin:28px 0 0;padding:24px 0 0;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.45;color:rgba(255,255,255,.9)}
+.svc-card li{position:relative;padding-left:20px}
+.svc-card li::before{content:"";position:absolute;left:0;top:.68em;width:9px;height:2px;background:var(--coral)}
+.svc-foot{align-self:end;padding-top:36px;display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-weight:600;font-size:13px}
+.svc-foot>span:first-child{font-stretch:118%;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-navy-soft)}
+.svc-go{display:inline-flex;align-items:center;gap:8px;color:#fff}
+.svc-go .arr{color:var(--coral);transition:transform .2s}
+.svc-card:hover .svc-go .arr{transform:translateX(4px)}
+.svc-cta{margin-top:56px;display:flex;justify-content:center}
+@media (max-width:960px){
+  .svc-home{padding-block:88px}
+  .svc-head{grid-template-columns:1fr;gap:24px}
+  .svc-cards{grid-template-columns:1fr;row-gap:16px;margin-top:48px}
+  .svc-card{grid-row:auto;grid-template-rows:none}
+  .svc-card{padding:32px 26px 28px}
+  .svc-cta{justify-content:flex-start;margin-top:40px}
+}
 @media (prefers-reduced-motion:reduce){.reveal{animation:none}*{transition:none!important}}
 
 @media (max-width:960px){
@@ -229,7 +260,7 @@ footer .wrap{padding-block:64px 40px}
       <h1 class="reveal d1">Empowering the Future of Risk&nbsp;&amp;&nbsp;Resilience<em>.</em></h1>
       <p class="lede reveal d2">Expert-led advisory strengthening leadership, communications, and organizational resilience.</p>
       <div class="ctas reveal d3">
-        <a class="btn btn-solid" href="#expertise">Explore Our Expertise <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-solid" href="#services">Explore Our Expertise <span class="arr" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -256,6 +287,44 @@ footer .wrap{padding-block:64px 40px}
           <div class="photo"><img src="assets/people-dexter-atkinson.jpg" alt="Portrait of Dexter Atkinson" loading="lazy"></div>
           <div class="txt"><h3>Dexter Atkinson</h3><p class="title">Principal Aviation Advisor</p></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-home" id="services">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <div class="eyebrow">Our Services</div>
+          <h2>Specialized Consulting Where Leadership, Risk, and Resilience Matter Most.</h2>
+        </div>
+        <p>Our work is organized into three pillars, each shaped by careers spent leading through the situations our clients prepare for. We bring that firsthand perspective to every engagement.</p>
+      </div>
+      <div class="svc-cards">
+        <a class="svc-card" href="services.html#leadership">
+          <span class="svc-num">01</span>
+          <h3>Executive Leadership &amp; Advisory</h3>
+          <p class="svc-tag">Strengthening leadership at every level.</p>
+          <ul><li>Senior leadership advisory &amp; executive coaching</li><li>Organizational assessments &amp; strategic planning</li><li>Succession planning &amp; leadership transitions</li><li>Fire &amp; EMS program development</li></ul>
+          <span class="svc-foot"><span>7 services</span><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></span>
+        </a>
+        <a class="svc-card" href="services.html#communications">
+          <span class="svc-num">02</span>
+          <h3>Strategic Communications &amp; Public Relations</h3>
+          <p class="svc-tag">Building trust. Strengthening reputations. Advancing missions.</p>
+          <ul><li>Crisis communications planning &amp; response</li><li>Reputation management &amp; public affairs</li><li>Executive communications &amp; media preparation</li><li>Stakeholder &amp; community engagement</li></ul>
+          <span class="svc-foot"><span>5 services</span><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></span>
+        </a>
+        <a class="svc-card" href="services.html#resilience">
+          <span class="svc-num">03</span>
+          <h3>Risk, Readiness &amp; Resilience</h3>
+          <p class="svc-tag">Anticipating challenges. Strengthening preparedness. Building resilience.</p>
+          <ul><li>Emergency response plans</li><li>Tabletop exercises</li><li>Incident command &amp; evacuation training</li><li>Wildland-urban interface resilience</li></ul>
+          <span class="svc-foot"><span>5 services</span><span class="svc-go">Explore <span class="arr" aria-hidden="true">&rarr;</span></span></span>
+        </a>
+      </div>
+      <div class="svc-cta">
+        <a class="btn btn-solid" href="services.html">View All Services <span class="arr" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
