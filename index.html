@@ -156,9 +156,10 @@ section{padding-block:120px}
 
 .close{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding-block:112px}
 .close::after{content:"";position:absolute;inset:0 0 0 40%;background:repeating-linear-gradient(118deg,rgba(255,255,255,.06) 0 1px,transparent 1px 16px),linear-gradient(90deg,transparent,rgba(43,90,128,.5));-webkit-mask-image:linear-gradient(90deg,transparent,#000 75%);mask-image:linear-gradient(90deg,transparent,#000 75%);pointer-events:none}
-.close .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end}
+.close .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:72px;row-gap:28px;align-items:center}
+.close .eyebrow{grid-column:1 / -1}
 .close .eyebrow{color:var(--on-navy-soft)}
-.close h2{margin-top:28px;font-size:clamp(44px,5.8vw,84px);letter-spacing:-0.045em;line-height:1;max-width:14ch}
+.close h2{margin:0;font-size:clamp(44px,5.8vw,84px);letter-spacing:-0.045em;line-height:1;max-width:14ch}
 .close h2 em{display:block;font-style:normal;color:var(--coral)}
 .close-side{padding:36px 36px 40px;background:rgba(8,26,40,.55);border-top:3px solid var(--coral);backdrop-filter:blur(2px);display:grid;gap:28px;justify-items:start}
 .close-side p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(20px,1.8vw,24px);line-height:1.4;letter-spacing:-0.01em;color:#fff}
@@ -244,7 +245,8 @@ footer .wrap{padding-block:64px 40px}
   .nav a:not(.btn){display:none}
   .intro .wrap,.difference .wrap,.purpose .wrap{grid-template-columns:1fr;gap:40px}
   .close{padding-block:88px}
-  .close .wrap{grid-template-columns:1fr;gap:40px}
+  .close .wrap{grid-template-columns:1fr;row-gap:24px}
+  .close-side{margin-top:16px}
   .close::after{inset:0 0 0 20%}
   .close-side{padding:28px 24px 32px}
   .intro .copy{padding-top:0}
@@ -375,10 +377,8 @@ footer .wrap{padding-block:64px 40px}
 
   <section class="close" id="contact">
     <div class="wrap">
-      <div class="close-head">
-        <div class="eyebrow">Start a Conversation</div>
-        <h2>The Kind Of R&amp;R <em>That Matters Most.</em></h2>
-      </div>
+      <div class="eyebrow">Start a Conversation</div>
+      <h2>The Kind Of R&amp;R <em>That Matters Most.</em></h2>
       <div class="close-side">
         <p>Your challenges are unique. So is our approach. Let&rsquo;s address what&rsquo;s next, together.</p>
         <a class="btn btn-solid btn-lg" href="#contact">Start a Conversation <span class="arr" aria-hidden="true">&rarr;</span></a>
