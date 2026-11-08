@@ -217,10 +217,10 @@ footer .wrap{padding-block:64px 40px}
 .wwd-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--head)}
 .wwd-go .arr{color:var(--coral);transition:transform .2s}
 .wwd-item:hover .wwd-go .arr{transform:translateX(4px)}
-.wwd-note{grid-column:3;grid-row:1;padding:32px 32px 36px;background:var(--surface);border-top:2px solid var(--navy);border-bottom-right-radius:28px;display:grid;gap:16px;align-content:start}
+.wwd-note{grid-column:1 / -1;grid-row:2;justify-self:center;width:100%;max-width:1000px;margin-top:24px;padding:40px 48px;background:var(--surface);border-top:2px solid var(--navy);border-bottom-right-radius:28px;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:56px;row-gap:12px;align-items:center}
 .wwd-note p{margin:0;font-family:var(--display);font-weight:500;font-size:20px;line-height:1.45;letter-spacing:-0.01em;color:var(--head)}
 .wwd-note .wwd-bridge{font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;letter-spacing:0;color:var(--fg-soft)}
-.wwd-note .btn{justify-self:start;margin-top:16px}
+.wwd-note .btn{grid-column:2;grid-row:1 / span 2;justify-self:end;margin:0;white-space:nowrap}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--coral);color:#fff}
 .btn-navy .arr{transition:transform .2s}
@@ -230,7 +230,8 @@ footer .wrap{padding-block:64px 40px}
   .wwd-band::after{inset:0 0 0 30%}
   .wwd-body{padding-block:72px 88px}
   .wwd-grid{grid-template-columns:1fr;gap:40px;margin-top:40px}
-  .wwd-note{grid-column:auto;grid-row:auto;order:4}
+  .wwd-note{grid-column:auto;grid-row:auto;order:4;grid-template-columns:1fr;padding:32px 28px;margin-top:0}
+  .wwd-note .btn{grid-column:auto;grid-row:auto;justify-self:start;margin-top:12px}
 }
 @media (prefers-reduced-motion:reduce){.reveal{animation:none}*{transition:none!important}}
 
@@ -326,7 +327,7 @@ footer .wrap{padding-block:64px 40px}
     </div>
     <div class="wwd-body">
       <div class="wrap">
-        <h2 class="wwd-h">The ARRC Offering</h2>
+        <h2 class="wwd-h">ARRC Services</h2>
         <div class="wwd-grid">
           <a class="wwd-item" href="services.html#leadership">
             <h3>Executive Leadership &amp; Advisory</h3>
