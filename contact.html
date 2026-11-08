@@ -328,6 +328,23 @@ footer .wrap{padding-block:64px 40px}
   .form-submit{justify-content:stretch}.form-submit .btn{width:100%;justify-content:center}
   .form-note{text-align:left}
 }
+
+/* Mobile menu */
+.menu-btn{display:none;position:relative;z-index:12;width:44px;height:44px;margin-right:-8px;border:0;background:transparent;cursor:pointer;color:#fff}
+.menu-btn span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;transition:transform .3s ease,opacity .2s ease}
+.menu-btn span:nth-child(1){top:15px}.menu-btn span:nth-child(2){top:21px}.menu-btn span:nth-child(3){top:27px}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:8;background:var(--navy-deep);color:#fff;padding:120px 24px 40px;display:flex;flex-direction:column;gap:4px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+.mobile-menu a{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-0.02em;color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.mobile-menu a[aria-current="page"]{color:var(--coral)}
+.mobile-menu .btn{margin-top:32px;align-self:stretch;justify-content:center;font-size:16px;padding:18px 22px;border-bottom:0;color:var(--navy);background:#fff}
+.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .25s ease}
+.menu-open{overflow:hidden}
+.menu-open .mast{background:var(--navy-deep);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:rgba(255,255,255,.08)}
+.mast>.wrap{position:relative;z-index:9}
+@media (max-width:960px){.menu-btn{display:block}}
 </style>
 </head>
 <body>
@@ -340,7 +357,16 @@ footer .wrap{padding-block:64px 40px}
       <a href="people.html">Our People</a>
       <a href="contact.html" class="btn btn-solid">Start a Conversation</a>
     </nav>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="./">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="people.html">Our People</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a class="btn btn-solid" href="contact.html">Start a Conversation <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </nav>
 </header>
 
 <main id="top">
@@ -361,13 +387,13 @@ footer .wrap{padding-block:64px 40px}
         </div>
         <form class="contact-form" id="contact-form" action="#" method="POST" onsubmit="return false">
           <h2>Start a Conversation</h2>
-          <p class="form-legend"><span aria-hidden="true">*</span> Required</p>
+          <p class="form-legend">All fields are required.</p>
           <div class="form-grid">
-            <div class="field"><label for="first">First Name</label><input id="first" name="first_name" type="text" autocomplete="given-name"></div>
-            <div class="field"><label for="last">Last Name</label><input id="last" name="last_name" type="text" autocomplete="family-name"></div>
+            <div class="field"><label for="first">First Name<span class="req" aria-hidden="true">*</span></label><input id="first" name="first_name" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label for="last">Last Name<span class="req" aria-hidden="true">*</span></label><input id="last" name="last_name" type="text" autocomplete="family-name" required></div>
             <div class="field"><label for="email">Email<span class="req" aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
             <div class="field"><label for="phone">Phone<span class="req" aria-hidden="true">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(999) 999-9999" required></div>
-            <div class="field full"><label for="org">Organization</label><input id="org" name="organization" type="text" autocomplete="organization"></div>
+            <div class="field full"><label for="org">Organization<span class="req" aria-hidden="true">*</span></label><input id="org" name="organization" type="text" autocomplete="organization" required></div>
             <div class="field full"><label for="source">How Did You Hear About Us?<span class="req" aria-hidden="true">*</span></label>
               <select id="source" name="source" required>
                 <option value="" disabled selected>Select one</option>
@@ -379,7 +405,7 @@ footer .wrap{padding-block:64px 40px}
                 <option>Event or Conference</option>
                 <option>Other</option>
               </select></div>
-            <div class="field full"><label for="msg">Message</label><textarea id="msg" name="message"></textarea></div>
+            <div class="field full"><label for="msg">Message<span class="req" aria-hidden="true">*</span></label><textarea id="msg" name="message" required></textarea></div>
           </div>
           <div class="form-submit"><button class="btn btn-navy btn-lg" type="submit">Send Message <span class="arr" aria-hidden="true">&rarr;</span></button></div>
         </form>
@@ -401,6 +427,14 @@ footer .wrap{padding-block:64px 40px}
 (function(){var m=document.querySelector('.mast');if(!m)return;var on=false;
 function u(){var c=window.scrollY>40;if(c!==on){on=c;m.classList.toggle('compact',c);}}
 window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+<script>
+(function(){var b=document.querySelector('.menu-btn');if(!b)return;var d=document.documentElement;
+function set(o){d.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+b.addEventListener('click',function(){set(!d.classList.contains('menu-open'));});
+document.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+window.addEventListener('resize',function(){if(window.innerWidth>960)set(false);});})();
 </script>
 </body>
 </html>
