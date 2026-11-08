@@ -161,8 +161,9 @@ section{padding-block:120px}
 .close .eyebrow{color:var(--on-navy-soft)}
 .close h2{margin:0;font-size:clamp(44px,5.8vw,84px);letter-spacing:-0.045em;line-height:1;max-width:14ch}
 .close h2 em{display:block;font-style:normal;color:var(--coral)}
-.close-side{padding:36px 36px 40px;background:rgba(8,26,40,.55);border-top:3px solid var(--coral);backdrop-filter:blur(2px);display:grid;gap:28px;justify-items:start}
-.close-side p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(20px,1.8vw,24px);line-height:1.4;letter-spacing:-0.01em;color:#fff}
+.close-side{justify-self:end;width:100%;max-width:400px;padding:28px 30px 30px;background:rgba(8,26,40,.4);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--coral);backdrop-filter:blur(2px);display:grid;gap:22px;justify-items:start}
+.close-side .btn-lg{padding:14px 22px;font-size:14px}
+.close-side p{margin:0;font-family:var(--body);font-weight:400;font-size:17px;line-height:1.6;color:rgba(255,255,255,.88)}
 .btn-lg{padding:18px 28px;font-size:15px}
 .btn-lg .arr{transition:transform .2s}
 .btn-lg:hover .arr{transform:translateX(4px)}
@@ -248,7 +249,7 @@ footer .wrap{padding-block:64px 40px}
   .close .wrap{grid-template-columns:1fr;row-gap:24px}
   .close-side{margin-top:16px}
   .close::after{inset:0 0 0 20%}
-  .close-side{padding:28px 24px 32px}
+  .close-side{padding:24px 22px 26px;justify-self:start;max-width:none}
   .intro .copy{padding-top:0}
   .leader+.intro .wrap{padding-top:80px}
   .rr{padding-block:80px}
