@@ -339,20 +339,22 @@ footer .wrap{padding-block:64px 40px}
 .svc-intro-body p{margin:0;font-size:clamp(18px,1.5vw,20px);line-height:1.7;color:var(--fg-soft)}
 .svc-intro-body p:first-child{color:var(--fg)}
 
-.practices{padding-block:88px 128px}
-.practices-head{max-width:640px}
+.practices{padding-block:96px 136px}
+.practices-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:end}
 .practices-head h2{font-size:clamp(30px,3.2vw,44px);letter-spacing:-0.03em;line-height:1.08;color:var(--head)}
-.practices-head p{margin:16px 0 0;font-size:17px;line-height:1.65;color:var(--fg-soft)}
-.practice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;row-gap:64px;margin-top:56px;padding-bottom:72px;border-bottom:1px solid var(--line)}
-.practice{padding-top:36px;border-top:3px solid var(--head);scroll-margin-top:110px;min-width:0}
-.practice h3{font-size:24px;font-weight:600;letter-spacing:-0.015em;line-height:1.25;color:var(--head)}
+.practices-head p{margin:0;font-size:18px;line-height:1.7;color:var(--fg-soft);max-width:48ch}
+.practice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:96px;row-gap:88px;margin-top:72px}
+.practice{position:relative;padding-top:32px;border-top:1px solid var(--line);scroll-margin-top:110px;min-width:0}
+.practice::before{content:"";position:absolute;left:0;top:-1px;width:56px;height:2px;background:var(--coral);transition:width .35s ease}
+.practice:hover::before{width:112px}
+.practice-num{display:block;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--fg-soft)}
+.practice h3{margin-top:16px;font-size:clamp(28px,2.9vw,40px);font-weight:600;letter-spacing:-0.03em;line-height:1.08;color:var(--head)}
 .practice h3 a{color:inherit;text-decoration:none}
-.practice h3 a[href]:hover{color:var(--coral)}
-.practice p{margin-top:12px;font-size:17px;line-height:1.6;color:var(--fg-soft);max-width:44ch}
-.practice-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:600;font-size:15px;color:var(--head);text-decoration:none}
-.practice-link:not([href]){display:none}
+.practice p{margin-top:20px;font-size:17px;line-height:1.7;color:var(--fg-soft);max-width:46ch}
+.practice-link{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-family:var(--display);font-weight:600;font-size:15px;color:var(--head);text-decoration:none}
 .practice-link .arr{color:var(--coral);transition:transform .2s}
-.practice-link:hover .arr{transform:translateX(4px)}
+.practice-link[href]:hover .arr{transform:translateX(4px)}
+.practice h3 a[href]:hover{color:var(--coral)}
 .practice a:not([href]){cursor:default}
 
 /* Closing CTA (matches homepage) */
@@ -373,9 +375,8 @@ footer .wrap{padding-block:64px 40px}
   .svc-intro{padding-block:72px 16px}
   .svc-intro-body{margin-top:28px}
   .practices{padding-block:64px 88px}
-  .practice-grid{grid-template-columns:1fr;row-gap:44px;margin-top:40px;padding-bottom:56px}
-  .practice{padding-top:28px}
-  .practice h3{font-size:22px}
+  .practices-head{grid-template-columns:1fr;gap:20px}
+  .practice-grid{grid-template-columns:1fr;row-gap:56px;margin-top:48px}
   .close{padding-block:88px}
   .close .wrap{grid-template-columns:1fr;row-gap:40px}
   .close-side{justify-self:start;max-width:none;padding:24px 22px 26px}
@@ -431,21 +432,25 @@ footer .wrap{padding-block:64px 40px}
       </div>
       <div class="practice-grid">
         <article class="practice" id="leadership">
+          <span class="practice-num">01.</span>
           <h3><a class="practice-title" data-page="practices/leadership-strategy.html">Leadership &amp; Strategy</a></h3>
           <p>We help organizations strengthen leadership, navigate change, and make informed decisions through executive counsel, strategic planning, and organizational development.</p>
           <a class="practice-link" data-page="practices/leadership-strategy.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="practice" id="resilience">
+          <span class="practice-num">02.</span>
           <h3><a class="practice-title" data-page="practices/risk-resilience.html">Risk &amp; Resilience</a></h3>
           <p>We help organizations anticipate threats, strengthen preparedness, and develop the capabilities needed to respond effectively, adapt to disruption, and maintain continuity.</p>
           <a class="practice-link" data-page="practices/risk-resilience.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="practice" id="communications">
+          <span class="practice-num">03.</span>
           <h3><a class="practice-title" data-page="practices/communications-reputation.html">Communications &amp; Reputation</a></h3>
           <p>We develop strategies that help organizations communicate with clarity, build stakeholder trust, protect their reputations, and strengthen engagement.</p>
           <a class="practice-link" data-page="practices/communications-reputation.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="practice" id="operations">
+          <span class="practice-num">04.</span>
           <h3><a class="practice-title" data-page="practices/operations-performance.html">Operations &amp; Performance</a></h3>
           <p>We provide specialized consulting to help organizations evaluate operations, strengthen programs, improve service delivery, and achieve lasting performance improvements.</p>
           <a class="practice-link" data-page="practices/operations-performance.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
