@@ -344,23 +344,17 @@ footer .wrap{padding-block:64px 40px}
 .practices-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:end}
 .practices-head h2{font-size:clamp(30px,3.2vw,44px);letter-spacing:-0.03em;line-height:1.08;color:var(--head)}
 .practices-head p{margin:0;font-size:18px;line-height:1.7;color:var(--fg-soft);max-width:48ch}
-.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:56px;row-gap:36px;margin-top:56px}
-.practice{position:relative;display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start;padding-top:24px;border-top:1px solid var(--line);scroll-margin-top:110px;min-width:0}
-.practice::before{content:"";position:absolute;left:0;top:-1px;width:56px;height:2px;background:var(--coral);transition:width .35s ease}
-.practice:hover::before{width:112px}
-.practice-num{display:block;font-family:var(--display);font-stretch:118%;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--fg-soft)}
-.practice h3{margin-top:0;font-size:clamp(19px,1.6vw,22px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:var(--head)}
-.practice h3 a{color:inherit;text-decoration:none}
-.practice p{margin-top:10px;font-size:16px;line-height:1.6;color:var(--fg-soft);max-width:40ch}
-.practice-link{justify-self:start;align-self:start;display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--head);text-decoration:none}
-.practice-link .arr{color:var(--coral);transition:transform .2s}
-@media (hover:hover){
-  .practice-link{opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease}
-  .practice:hover .practice-link,.practice:focus-within .practice-link{opacity:1;transform:none}
-}
-.practice-link[href]:hover .arr{transform:translateX(4px)}
-.practice h3 a[href]:hover{color:var(--coral)}
-.practice a:not([href]){cursor:default}
+.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:56px;row-gap:56px;margin-top:56px}
+.practice{position:relative;display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0;align-content:start;padding-top:28px;border-top:3px solid var(--head);color:inherit;text-decoration:none;scroll-margin-top:110px;min-width:0;transition:border-color .25s ease}
+.practice[href]{cursor:pointer}
+.practice h3{margin:0;font-size:clamp(19px,1.6vw,22px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:var(--head);transition:color .25s ease}
+.practice-body{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;align-self:start;margin-top:12px}
+.practice-desc{font-size:16px;line-height:1.6;color:var(--fg-soft)}
+.practice-go{width:40px;height:40px;display:grid;place-items:center;background:var(--coral);color:#fff;opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease}
+.practice:hover,.practice:focus-visible{border-top-color:var(--coral);outline:none}
+.practice:hover h3,.practice:focus-visible h3{color:var(--coral)}
+.practice:hover .practice-go,.practice:focus-visible .practice-go{opacity:1;transform:none}
+@media (hover:none){.practice-go{opacity:1;transform:none}}
 
 @media (max-width:1100px) and (min-width:961px){.practice-grid{column-gap:40px}}
 /* Closing CTA (matches homepage) */
@@ -386,7 +380,7 @@ footer .wrap{padding-block:64px 40px}
   .practice-grid{grid-template-columns:1fr;row-gap:40px;margin-top:40px}
   .practice{grid-row:auto;grid-template-rows:none}
   .practice h3{font-size:22px}
-  .practice p{font-size:16px}
+  .practice-go{width:36px;height:36px}
   .close{padding-block:88px}
   .close .wrap{grid-template-columns:1fr;row-gap:40px}
   .close-side{justify-self:start;max-width:none;padding:24px 22px 26px}
@@ -429,46 +423,38 @@ footer .wrap{padding-block:64px 40px}
         <h2>Practice Areas</h2>
       </div>
       <div class="practice-grid">
-        <article class="practice" id="leadership">
-          <h3><a class="practice-title" data-page="practices/executive-leadership-advisory.html">Executive Leadership Advisory</a></h3>
-          <p>Confidential counsel for executives and leadership teams facing high-stakes decisions, transitions, and organizational change.</p>
-          <a class="practice-link" data-page="practices/executive-leadership-advisory.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="strategy">
-          <h3><a class="practice-title" data-page="practices/organizational-strategy-development.html">Organizational Strategy &amp; Development</a></h3>
-          <p>Assessments, strategic planning, and succession planning that strengthen structure, culture, and long-term direction.</p>
-          <a class="practice-link" data-page="practices/organizational-strategy-development.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="preparedness">
-          <h3><a class="practice-title" data-page="practices/risk-assessment-preparedness.html">Risk Assessment &amp; Preparedness</a></h3>
-          <p>Identifying vulnerabilities and building the plans, procedures, and capabilities organizations need before an emergency occurs.</p>
-          <a class="practice-link" data-page="practices/risk-assessment-preparedness.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="resilience">
-          <h3><a class="practice-title" data-page="practices/crisis-management-resilience.html">Crisis Management &amp; Resilience</a></h3>
-          <p>Helping organizations respond to, manage, and recover from disruption with clear coordination and continuity.</p>
-          <a class="practice-link" data-page="practices/crisis-management-resilience.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="communications">
-          <h3><a class="practice-title" data-page="practices/strategic-communications.html">Internal &amp; External Strategic Communications</a></h3>
-          <p>Messaging, planning, and executive communications that keep employees, partners, and the public informed and aligned.</p>
-          <a class="practice-link" data-page="practices/strategic-communications.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="public-relations">
-          <h3><a class="practice-title" data-page="practices/public-relations-community-engagement.html">Public Relations &amp; Community Engagement</a></h3>
-          <p>Building public trust and lasting relationships with the communities, officials, and stakeholders you serve.</p>
-          <a class="practice-link" data-page="practices/public-relations-community-engagement.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="operations">
-          <h3><a class="practice-title" data-page="practices/operational-program-consulting.html">Operational &amp; Program Consulting</a></h3>
-          <p>Evaluating operations and programs to improve service delivery, efficiency, and performance.</p>
-          <a class="practice-link" data-page="practices/operational-program-consulting.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
-        <article class="practice" id="training">
-          <h3><a class="practice-title" data-page="practices/training-technical-advisory.html">Training &amp; Technical Advisory</a></h3>
-          <p>Tabletop exercises, incident command training, and specialized technical guidance drawn from firsthand field experience.</p>
-          <a class="practice-link" data-page="practices/training-technical-advisory.html">Explore Practice <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </article>
+        <a class="practice" id="leadership" data-page="practices/executive-leadership-advisory.html">
+          <h3>Executive Leadership Advisory</h3>
+          <span class="practice-body"><span class="practice-desc">Confidential counsel for executives and leadership teams facing high-stakes decisions, transitions, and organizational change.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="strategy" data-page="practices/organizational-strategy-development.html">
+          <h3>Organizational Strategy &amp; Development</h3>
+          <span class="practice-body"><span class="practice-desc">Assessments, strategic planning, and succession planning that strengthen structure, culture, and long-term direction.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="preparedness" data-page="practices/risk-assessment-preparedness.html">
+          <h3>Risk Assessment &amp; Preparedness</h3>
+          <span class="practice-body"><span class="practice-desc">Identifying vulnerabilities and building the plans, procedures, and capabilities organizations need before an emergency occurs.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="resilience" data-page="practices/crisis-management-resilience.html">
+          <h3>Crisis Management &amp; Resilience</h3>
+          <span class="practice-body"><span class="practice-desc">Helping organizations respond to, manage, and recover from disruption with clear coordination and continuity.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="communications" data-page="practices/strategic-communications.html">
+          <h3>Internal &amp; External Strategic Communications</h3>
+          <span class="practice-body"><span class="practice-desc">Messaging, planning, and executive communications that keep employees, partners, and the public informed and aligned.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="public-relations" data-page="practices/public-relations-community-engagement.html">
+          <h3>Public Relations &amp; Community Engagement</h3>
+          <span class="practice-body"><span class="practice-desc">Building public trust and lasting relationships with the communities, officials, and stakeholders you serve.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="operations" data-page="practices/operational-program-consulting.html">
+          <h3>Operational &amp; Program Consulting</h3>
+          <span class="practice-body"><span class="practice-desc">Evaluating operations and programs to improve service delivery, efficiency, and performance.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
+        <a class="practice" id="training" data-page="practices/training-technical-advisory.html">
+          <h3>Training &amp; Technical Advisory</h3>
+          <span class="practice-body"><span class="practice-desc">Tabletop exercises, incident command training, and specialized technical guidance drawn from firsthand field experience.</span><span class="practice-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12h15m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></span></span>
+        </a>
       </div>
     </div>
   </section>
