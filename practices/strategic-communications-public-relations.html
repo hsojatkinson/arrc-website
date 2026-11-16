@@ -399,7 +399,7 @@ footer .wrap{padding-block:64px 40px}
 .tabs{margin-top:72px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{flex:0 0 auto;appearance:none;border:0;border-top:3px solid transparent;background:transparent;color:rgba(255,255,255,.82);font:600 15px/1.2 var(--display);padding:20px 26px 22px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
-.tab:hover:not([aria-disabled="true"]){background:rgba(255,255,255,.08);color:#fff}
+.tab:hover:not([aria-disabled="true"]):not([aria-selected="true"]){background:rgba(255,255,255,.08);color:#fff}
 .tab[aria-selected="true"]{background:var(--bg);color:var(--head);border-top-color:var(--coral)}
 .tab[aria-disabled="true"]{color:rgba(255,255,255,.45);cursor:default}
 .tab:focus-visible{outline:2px solid var(--coral);outline-offset:-2px}
@@ -472,7 +472,7 @@ footer .wrap{padding-block:64px 40px}
       <p class="lede">ARRC provides strategic communications and public relations counsel to organizations navigating complex challenges, protecting reputations, and building public trust. From executive communications to crisis response, our approach is tailored to each organization&rsquo;s unique needs.</p>
       <div class="tabs" role="tablist" aria-label="Practice sections">
         <button class="tab" role="tab" id="tab-strategic-communications" data-tab="strategic-communications" aria-controls="strategic-communications" aria-selected="true">Strategic Communications</button>
-        <button class="tab" role="tab" id="tab-public-relations" data-tab="public-relations-engagement" aria-selected="false" aria-disabled="true" tabindex="-1">Public Relations &amp; Engagement</button>
+        <button class="tab" role="tab" id="tab-public-relations" data-tab="public-relations-engagement" aria-controls="public-relations-engagement" aria-selected="false" tabindex="-1">Public Relations &amp; Engagement</button>
         <button class="tab" role="tab" id="tab-reputation" data-tab="reputation-positioning" aria-selected="false" aria-disabled="true" tabindex="-1">Reputation &amp; Positioning</button>
       </div>
     </div>
@@ -490,6 +490,23 @@ footer .wrap{padding-block:64px 40px}
           <div class="xp"><h4>External Communications</h4><p>Developing consistent messaging that communicates organizational priorities and builds confidence among partners, stakeholders, and the public.</p></div>
           <div class="xp"><h4>Executive Positioning</h4><p>Supporting senior leaders with strategic messaging, speeches, thought leadership, and communications counsel.</p></div>
           <div class="xp"><h4>Communications Planning</h4><p>Building structured communications plans for organizational initiatives, major announcements, and periods of change.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="panel" role="tabpanel" id="public-relations-engagement" aria-labelledby="tab-public-relations" hidden>
+    <section class="pr-exp">
+      <div class="wrap">
+        <div class="exp-head">
+          <h3>Our Expertise</h3>
+          <p>Building public trust starts with meaningful relationships. ARRC develops public relations and engagement strategies that strengthen credibility, foster connections, and support lasting relationships with the communities and stakeholders organizations serve.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="xp"><h4>Media Relations</h4><p>Developing proactive media strategies, managing press inquiries, and strengthening relationships with journalists to support accurate and effective public communications.</p></div>
+          <div class="xp"><h4>Community Engagement</h4><p>Creating initiatives that strengthen community relationships, encourage meaningful participation, and build trust between organizations and the people they serve.</p></div>
+          <div class="xp"><h4>Stakeholder Relations</h4><p>Building and maintaining relationships with public officials, industry partners, community leaders, and other key stakeholders to support organizational priorities.</p></div>
+          <div class="xp"><h4>Public Relations Strategy</h4><p>Planning and executing public relations initiatives that strengthen organizational visibility, communicate key priorities, and reinforce public confidence.</p></div>
         </div>
       </div>
     </section>
