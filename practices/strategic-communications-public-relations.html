@@ -410,7 +410,7 @@ footer .wrap{padding-block:64px 40px}
 .pr-intro h2{font-size:clamp(32px,3.6vw,48px);letter-spacing:-0.035em;line-height:1.05;color:var(--head)}
 .pr-intro h2::after{content:"";display:block;width:64px;height:4px;background:var(--coral);margin-top:28px}
 .pr-intro p{margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.65;color:var(--fg)}
-.pr-exp{padding-block:104px 128px}
+.pr-exp{padding-block:104px 104px}
 .exp-head{max-width:640px}
 .exp-head h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:-0.03em;line-height:1.1;color:var(--head)}
 .exp-head p{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--fg-soft)}
@@ -419,6 +419,15 @@ footer .wrap{padding-block:64px 40px}
 .xp h4{margin:0;font-size:clamp(20px,1.8vw,24px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:var(--head)}
 .xp p{margin:12px 0 0;font-size:16px;line-height:1.65;color:var(--fg-soft);max-width:50ch}
 
+.advisors{padding-block:24px 128px}
+.advisors h2{font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em;line-height:1.1;color:var(--head)}
+.adv-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 72px;max-width:900px}
+.adv{display:block;color:inherit;text-decoration:none}
+.adv img{display:block;width:clamp(200px,22vw,280px);aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.adv h3{margin-top:28px;font-size:clamp(20px,1.9vw,24px);font-weight:600;letter-spacing:-0.02em;color:var(--head);transition:color .2s}
+.adv p{margin:6px 0 0;font-size:16px;color:var(--fg-soft)}
+.adv:hover h3{color:var(--coral)}
+@media (max-width:600px){.advisors{padding-block:8px 88px}.adv-grid{grid-template-columns:1fr;gap:48px;margin-top:40px}.adv img{width:220px}}
 @media (max-width:960px){
   .pr-hero{padding:128px 0 0}
   .tabs{margin-top:48px;margin-inline:-24px;padding-inline:24px}
@@ -482,6 +491,24 @@ footer .wrap{padding-block:64px 40px}
       </div>
     </section>
   </div>
+
+  <section class="advisors">
+    <div class="wrap">
+      <h2>Key Advisors</h2>
+      <div class="adv-grid">
+        <a class="adv" href="../people.html">
+          <img src="../assets/people-joshua-atkinson.jpg" alt="Joshua Atkinson" loading="lazy">
+          <h3>Joshua Atkinson</h3>
+          <p>Founder &amp; Client Director</p>
+        </a>
+        <a class="adv" href="../scott-atkinson.html">
+          <img src="../assets/people-scott-atkinson.jpg" alt="Scott Atkinson" loading="lazy">
+          <h3>Scott Atkinson</h3>
+          <p>Principal Public Safety Advisor</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="close">
     <div class="wrap">
