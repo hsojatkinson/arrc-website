@@ -427,6 +427,9 @@ footer .wrap{padding-block:64px 40px}
 .adv h3{margin-top:18px;font-size:18px;font-weight:600;letter-spacing:-0.02em;color:var(--head);transition:color .2s}
 .adv p{margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--fg-soft)}
 .adv:hover h3{color:var(--coral)}
+.adv img{outline:2px solid transparent;outline-offset:5px;transition:outline-color .25s ease}
+.adv:hover img,.adv:focus-visible img{outline-color:var(--coral)}
+.adv:focus-visible{outline:none}
 @media (max-width:600px){.advisors{padding-block:8px 80px}.adv-grid{gap:32px 24px;margin-top:28px}.adv{width:calc(50% - 12px)}.adv img{width:min(130px,100%)}}
 @media (max-width:960px){
   .pr-hero{padding:128px 0 0}
